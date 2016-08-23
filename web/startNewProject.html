@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Start</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../brokenBooks/css/brokenbooks.css">	
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>  
+        <script src="../brokenBooks/js/bb.js"></script>  
+        <style>
+            .popover{
+                margin: 0px auto;
+                background-color: #000;
+                padding: 37px 45px;
+                display: block;
+                width: 497px;
+                z-index: 3;
+            }
+            .popover input[type="button"]{
+                display:block;
+                margin: 12px 0px auto;
+                font-size: 16px;
+            }
+            .popHdr{
+                color:white;
+                position: absolute;
+                top: 10px;
+                font-weight: bold;
+                font-size: 22px;
+                font-family: sans-serif;
+                text-transform: uppercase;
+                left: 50px;
+            }
+            .projectPopover{
+                
+            }
+            .userInfo{
+                display: none;
+            }
+            .contentText{
+                margin: 2px 5px;
+                color: white;
+            }
+            #provide_canvas, #provide_manifest, #provide_image{
+                display:none;
+            }
+            .projectOption, .projectInfo, .userInfo{
+                color: white;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="popover intro">
+            <div class="popHdr">start a new project</div>
+            <div class="contentText">
+                Here you can start a new project in Broken Books.  Select from the options below to decide how to begin. <br>
+            </div>
+            <input onclick="beginProjectForm('image');" type="button" value="I have an image that belongs to a manuscript"/>
+            <input onclick="beginProjectForm('canvas');" type="button" value="I have one (or multiple) IIIF canvas JSON object(s)"/>
+            <input onclick="beginProjectForm('manifest');" type="button" value="I have a IIIF manifest.json"/>
+            <input onclick="beginProjectForm();" type="button" value="I just want to start from scratch"/>
+            
+        </div>
+        <div class="projectPopover"></div>
+    </body>
+</html>
+<script>
+    function beginProjectForm(provided){
+        $(".popover").remove();
+        $(".projectPopover").load("../brokenBooks/projectPopover.html");
+        makeNewUID(provided);
+    }
+    
+    function makeNewUID(providedInfo){
+        var saveNewURL = "http://localhost:8080/brokenBooks/saveNewRange";
+        var agent = {
+            "@type" : "foaf:Agent",
+            "firstName" : "Test",
+//            "lastName" : "Agent",
+            "mbox" :"unknown",
+            "sandbox" : "true"
+        };
+        var params = {content:JSON.stringify(agent)};
+        var newUserID = "";
+        var url = window.location.href;
+            //use that user
+        var user = "unknown";
+        if(url.indexOf("user=")>-1){
+            user = /user=([^&]+)/.exec(url)[1]; 
+        }
+        var newUserID = user ? user : 'unknown';
+        if(newUserID === "unknown"){
+            $(".userInfo").show();
+            $.post(saveNewURL, params, function(userdata){
+                userdata = JSON.parse(userdata);
+                var userID = userdata["@id"];
+                newUserID = userID;
+                $("#updateUser").attr("onclick", "updateUserInfo('"+newUserID+"');");
+                saveManifestObj(newUserID, providedInfo);
+                var windowURL = document.location.href + "?user="+newUserID;
+                window.history.pushState("Object", "Title", windowURL);
+            });
+        }
+        else{
+            alert("Users are only allowed to have one project at this time.  Sorry!");
+            //saveManifestObj(newUserID, providedInfo);
+        }
+    }
+    
+    function updateUserInfo(userID){
+        var fname = "";
+//        var lname = "";
+        var email = "";
+        var updateURL = "http://localhost:8080/brokenBooks/updateRange";
+        var paramObj = {"@id":userID, firstName:fname, mbox:email};
+        if(fname === ""){
+            delete paramObj.firstName;
+        }
+//        if(lname === ""){
+//            delete paramObj.lastName;
+//        }
+        if(email === ""){
+            delete paramObj.mbox;
+        }
+        var params = {"content":JSON.stringif(params)};
+        $.post(updateURL, params, function(data){
+            
+        });
+    }
+    
+    function saveManifestObj(userID, providedInfo){
+        $("#saveMan").attr("onclick", "saveMan('"+userID+"', '"+providedInfo+"');");
+        switch(providedInfo){
+            case "image":
+                $("#provide_image").show();
+                break;
+            case "canvas":
+                $("#provide_canvas").show();
+                break;
+            case "manifest":
+                $("#provide_manifest").show();
+               break;
+            default:
+                console.log("This is the default!");
+        }
+      
+    }
+    
+    function saveMan(userID, providedInfo){
+        var manifestTitle = $("#projectLabel").val();
+        var manifestCreator = $("#projectCreator").val();
+        var anchorObj = $("#projectAnchor").val();
+        var manifestMetadataArray = [{label:"Title", value:manifestTitle},
+            {label:"Created By", value:manifestCreator},{label:"Anchor Object", value:anchorObj}];
+        var manifestObj = {
+            "@type":"sc:Manifest",
+            "label":manifestTitle,
+            "@context":"http://iiif.io/api/presentation/2/context.json",
+            "metadata":manifestMetadataArray,
+            "forProject":"broken_books_"+userID,
+            "structures":[],
+            "sequences":[
+                {
+                    "@id":"http://localhost:8080/brokenBooks/sequence/normal",
+                    "@type":"sc:Sequence",
+                    "label":"Manifest Sequence",
+                    "canvases":[]
+                }
+            ]        
+        };
+        var providedURL = "";
+        var createFirstLeafFlag = false;
+        var createManifestStructureFlag = false;
+        switch(providedInfo){
+            case "image":
+                //need to create the first leaf for the user and populate the canvas with the image
+                providedURL = $("#provide_image").children("input").val();
+                createFirstLeafFlag=true;
+                break;
+            case "canvas":
+                //need to create the first leaf for the user and populate with this canvas
+                providedURL = $("#provide_canvas").children("input").val();
+                createFirstLeafFlag=true;
+                break;
+            case "manifest":
+                //Need to go over the sequence, create leaves off the pairs, put the leaves in a root range and populate structures
+                //of manifest object.
+                providedURL = $("#provide_manifest").children("input").val();
+                createManifestStructureFlag=true;
+               break;
+            default:
+                console.log("This is the default!");
+        }
+        var saveNewURL = "http://localhost:8080/brokenBooks/saveNewRange";
+        var params = {content:JSON.stringify(manifestObj)};
+        $.post(saveNewURL,params,function(manifestdata){
+            manifestdata = JSON.parse(manifestdata);
+            var manifestID = manifestdata["@id"];
+            createNewRoot(userID, manifestID, createFirstLeafFlag, createManifestStructureFlag, providedInfo, providedURL);
+        });
+    }
+    
+    function createNewRoot(userID, manifestID, leafFlag, manifestFlag, providedInfo, providedURL){
+        var canvas1ID = "";
+        var canvas2ID = "";
+        var updateURL = "http://localhost:8080/brokenBooks/updateCanvas";
+        var saveNewURL = "http://localhost:8080/brokenBooks/saveNewRange";
+        var rootRange = {
+            "@type" : "sc:Range",
+            "within" : "root",
+            "otherContent" : [],
+            "canvases" : [],
+            "label" : "Table of Contents",
+            "forProject" : "broken_books_"+userID, //need UID function for this
+            "isReferencedBy" : manifestID, //won't have this yet
+            "parent" : "paggr_"+userID,
+            "ranges" : []
+        };
+        var leafRangeObject = {
+            "@id" : "http://www.example.org/iiif/LlangBrev/range/new",
+            "@type":"sc:Range",
+            "label":"New Page" ,
+            "canvases" : [
+
+            ],
+            "resources" : [],
+            "ranges" : [],
+            "isReferencedBy":manifestID,
+            "forProject": "broken_books_"+userID,
+            "within" : "bucket", //dont want these to appear until placed
+            "otherContent" : [],
+            "lockedup" : "",
+            "lockeddown": "",
+            "isOrdered" : ""
+        };
+        var newCanvasHolderImg = {
+            "@type":"oa:Annotation",
+            "motivation":"sc:painting",
+            "resource":
+                {
+
+                    "format":"image/jpg",
+                    "@type":"dctypes:Image",
+
+                    "@id" : "http://localhost:8080/brokenBooks/images/imgNotFound.png",
+                    "service":
+                        {                                       
+                            "@context": "http://iiif.io/api/image/2/context.json",
+                            "profile":"http://iiif.io/api/image/2/profiles/level2.json",
+                            "@id" : "http://localhost:8080/brokenBooks/images/imgNotFound.png"
+                        },
+                    "width": 667,
+                    "height":1000
+                },
+                "on":""
+        };
+        var newCanvas1 = {
+            "@id" : "http://www.example.org/iiif/LlangBrev/canvas/new", //local
+            "@type" : "sc:Canvas",
+            "label" : "Side A",
+            "height" : 1000,
+            "width" : 667,
+            "images" : [],
+            "forProject" : "broken_books_"+userID,
+            "otherContent": [],
+            "within" : ""
+        };
+        var newCanvas1AnnoList = {
+            "@id":"http://www.example.org/iiif/LlangBrev/annoList/new", 
+            "@type":"sc:AnnotationList",
+            "resources" : [],
+            "forProject": "broken_books_"+userID,
+            "on" :canvas1ID
+        }; //local
+        var newCanvas2 = {
+            "@id":"http://www.example.org/iiif/LlangBrev/canvas/new",
+            "@type" : "sc:Canvas",
+            "label" : "Side B",
+            "height" : 1000,
+            "width" : 667,
+            "images" : [],
+            "forProject" : "broken_books_"+userID,
+            "otherContent" : [],
+            "within" : ""
+        };
+        
+        var params2 = {content:JSON.stringify(rootRange)};
+        $.post(saveNewURL,params2,function(rootdata){
+            console.log("saved the root range");
+            rootdata = JSON.parse(rootdata);
+            var rootRangeID = rootdata["@id"];
+            rootRange["@id"] = rootRangeID;
+            if(leafFlag){
+                console.log("user provided info that warrants us creating the first leaf.");
+                var params3 = {'content': JSON.stringify(newCanvas1)};
+                $.post(saveNewURL, params3, function(data){ //save first new canvas
+                    console.log("saved first canvas...");
+                    data = JSON.parse(data);
+                    var newCanvas1HolderImg = newCanvasHolderImg;
+                    canvas1ID = data["@id"];
+                    newCanvas1HolderImg.on = canvas1ID;
+                    var listParams1 = {"content" : JSON.stringify(newCanvas1AnnoList)};
+                    $.post(saveNewURL, listParams1, function(data){ //save first canvas annotation list
+                        //add holder img annotation in to images field.
+                        console.log("saved first canvas anno list");
+                        var listID = data["@id"];
+                        var imgAnno = {"@id":canvas1ID, "images":[newCanvas1HolderImg] , "otherContent":[{"@id":listID,"@type":"sc:AnnotationList"}]};
+                        var imgParams = {"content":JSON.stringify(imgAnno)};
+                        $.post(updateURL, imgParams, function(data){
+                            console.log("updated canvas image with new image anno, also updated other content.");
+                        });
+                    });
+                
+                    var params4 = {'content': JSON.stringify(newCanvas2)};
+                    $.post(saveNewURL, params4, function(data){
+                        console.log("saved second canvas");
+                        data=JSON.parse(data);
+                        var newCanvas2HolderImg = newCanvasHolderImg;
+                        canvas2ID = data["@id"];
+                        newCanvas2HolderImg.on = canvas2ID;
+                        var newCanvas2AnnoList = {
+                            "@id":"http://www.example.org/iiif/LlangBrev/annoList/new", 
+                            "@type":"sc:AnnotationList",
+                            "resources" : [],
+                            "forProject": "broken_books_"+userID,
+                            "on" :  canvas2ID
+                        };
+                        var listParams2 = {"content" : JSON.stringify(newCanvas2AnnoList)};
+                        $.post(saveNewURL, listParams2, function(data){
+                            console.log("saved second canvas list");
+                            data = JSON.parse(data);
+                            var listID = data["@id"];
+                            var imgAnno2 = {"@id":canvas2ID, "images":[newCanvas2HolderImg],"otherContent":[{"@id":listID, "@type":"sc:AnnotationList"}]};
+                            var imgParams2 = {"content":JSON.stringify(imgAnno2)};
+                            $.post(updateURL, imgParams2, function(data){
+                                console.log("update second canvas image and other content");
+                            });
+                        });
+                        var newLeafID = "";
+                        leafRangeObject.canvases = [canvas1ID, canvas2ID];
+                        $.post(saveNewURL, {'content': JSON.stringify(leafRangeObject)}, function(data){
+                            data=JSON.parse(data);
+                            newLeafID = data["@id"];
+                            var newRangeAnnoList = {
+                                "@id":"http://www.example.org/iiif/LlangBrev/annoList/new", 
+                                "@type":"sc:AnnotationList",
+                                "resources" : [],
+                                "on" :newLeafID,
+                                "forProject": "broken_books_"+userID
+                            };
+                            var listParams = {"content" : JSON.stringify(newRangeAnnoList)};
+                            $.post(saveNewURL, listParams, function(data2){
+                                data2 = JSON.parse(data2);
+                                var paramObj = {"@id":newLeafID, "otherContent":[{"@id":data2["@id"], "@type":"sc:AnnotationList"}]};
+                                var params = {"content":JSON.stringify(paramObj)};
+                                rootRange.ranges.push(newLeafID);
+                                var updateURL = "http://localhost:8080/brokenBooks/updateRange";
+                                $.post(updateURL, params, function(data){
+                                    console.log("updated new leafs other content field");
+                                });
+                                var paramObj2 = {"@id":rootRange["@id"], ranges:rootRange.ranges};
+                                var params2 = {content:JSON.stringify(paramObj2)};
+                                $.post(updateURL, params2, function(data){
+                                    console.log("updated root range ranges field");
+                                });
+                            });
+                            leafRangeObject["@id"] = newLeafID;
+                            var paramObj1 = {"@id" : manifestID, "structures":[rootRange, leafRangeObject]};
+                            var params1 = {"content" : JSON.stringify(paramObj1)};
+                            $.post(updateURL, params1, function(data){
+                                console.log("update manifest structures with root range and leaf object.");
+                            });
+                        });
+                    });
+                });
+            }
+            else{
+                console.log("Don't need to make the first leaf, just update manifest structures with the root range.");
+                //update the manifest structures to include the root range object and the new leaf.
+                var postURL = "http://localhost:8080/brokenBooks/updateRange";
+                var paramObj1 = {"@id" : manifestID, "structures":[rootRange]};
+                var params1 = {"content" : JSON.stringify(paramObj1)};
+                $.post(postURL, params1, function(data){
+
+                });
+            }
+        });
+    }
+    
+</script>

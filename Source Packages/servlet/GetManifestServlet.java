@@ -40,51 +40,52 @@ public class GetManifestServlet extends HttpServlet {
         username = request.getParameter("username");
         String ranges = "";
         JSONArray a_metadata = new JSONArray();
-        if(null == username || username.equals("debra")){
-            ranges = getAnnoByProperties("{\"@type\":\"sc:Range\",\"forProject\":\"broken_books_debra\"}");
-            JSONObject metadata1 = new JSONObject();
-            JSONObject metadata2 = new JSONObject();
-            JSONObject metadata3 = new JSONObject();
-            metadata1.element("label", "Title");
-            metadata1.element("value", "Llangattock Breviary Reconstruction");
-            metadata2.element("label", "Created By");
-            metadata2.element("value", "SLU Center for Digital Humanities");
-            metadata3.element("label", "Anchor Object"); //<img class='bbanchor' src='../brokenBooks/images/anchor.png'/>
-            metadata3.element("value", "http://ds.lib.berkeley.edu/VFLMS002_44");
-            a_metadata.add(metadata1);
-            a_metadata.add(metadata2);
-            a_metadata.add(metadata3);
-        }
-        else if(username.equals("lisa")){
-            ranges = getAnnoByProperties("{\"@type\":\"sc:Range\",\"forProject\":\"broken_books_lisa\"}");
-            JSONObject metadata1 = new JSONObject();
-            JSONObject metadata2 = new JSONObject();
-            JSONObject metadata3 = new JSONObject();
-            metadata1.element("label", "Title");
-            metadata1.element("value", "Beauvais Missal Reconstruction");
-            metadata2.element("label", "Created By");
-            metadata2.element("value", "Lisa Fagin Davis");
-            metadata3.element("label", "Anchor Object");
-            metadata3.element("value", "http://ds.lib.berkeley.edu/Ege15_40");
-            a_metadata.add(metadata1);
-            a_metadata.add(metadata2);
-            a_metadata.add(metadata3);
-        }
-        else if(username.equals("ray")){
-            ranges = getAnnoByProperties("{\"@type\":\"sc:Range\",\"forProject\":\"broken_books_ray\"}");
-            JSONObject metadata1 = new JSONObject();
-            JSONObject metadata2 = new JSONObject();
-            JSONObject metadata3 = new JSONObject();
-            metadata1.element("label", "Title");
-            metadata1.element("value", "Ray's Reconstruction Project");
-            metadata2.element("label", "Created By");
-            metadata2.element("value", "Ray Clemens");
-            metadata2.element("label", "Anchor Object");
-            metadata2.element("value", "http://ds.lib.berkeley.edu/BeineckeMS401_47");
-            a_metadata.add(metadata1);
-            a_metadata.add(metadata2);
-            a_metadata.add(metadata3);
-        }
+        ranges = getAnnoByProperties("{\"@type\":\"sc:Range\",\"forProject\":\"broken_books_"+username+"\"}");
+//        if(null == username || username.equals("debra")){
+//            ranges = getAnnoByProperties("{\"@type\":\"sc:Range\",\"forProject\":\"broken_books_debra\"}");
+//            JSONObject metadata1 = new JSONObject();
+//            JSONObject metadata2 = new JSONObject();
+//            JSONObject metadata3 = new JSONObject();
+//            metadata1.element("label", "Title");
+//            metadata1.element("value", "Llangattock Breviary Reconstruction");
+//            metadata2.element("label", "Created By");
+//            metadata2.element("value", "SLU Center for Digital Humanities");
+//            metadata3.element("label", "Anchor Object"); //<img class='bbanchor' src='../brokenBooks/images/anchor.png'/>
+//            metadata3.element("value", "http://ds.lib.berkeley.edu/VFLMS002_44");
+//            a_metadata.add(metadata1);
+//            a_metadata.add(metadata2);
+//            a_metadata.add(metadata3);
+//        }
+//        else if(username.equals("lisa")){
+//            ranges = getAnnoByProperties("{\"@type\":\"sc:Range\",\"forProject\":\"broken_books_lisa\"}");
+//            JSONObject metadata1 = new JSONObject();
+//            JSONObject metadata2 = new JSONObject();
+//            JSONObject metadata3 = new JSONObject();
+//            metadata1.element("label", "Title");
+//            metadata1.element("value", "Beauvais Missal Reconstruction");
+//            metadata2.element("label", "Created By");
+//            metadata2.element("value", "Lisa Fagin Davis");
+//            metadata3.element("label", "Anchor Object");
+//            metadata3.element("value", "http://ds.lib.berkeley.edu/Ege15_40");
+//            a_metadata.add(metadata1);
+//            a_metadata.add(metadata2);
+//            a_metadata.add(metadata3);
+//        }
+//        else if(username.equals("ray")){
+//            ranges = getAnnoByProperties("{\"@type\":\"sc:Range\",\"forProject\":\"broken_books_ray\"}");
+//            JSONObject metadata1 = new JSONObject();
+//            JSONObject metadata2 = new JSONObject();
+//            JSONObject metadata3 = new JSONObject();
+//            metadata1.element("label", "Title");
+//            metadata1.element("value", "Ray's Recontruction Project");
+//            metadata2.element("label", "Created By");
+//            metadata2.element("value", "Ray Clemens");
+//            metadata3.element("label", "Anchor Object");
+//            metadata3.element("value", "http://ds.lib.berkeley.edu/BeineckeMS401_47");
+//            a_metadata.add(metadata1);
+//            a_metadata.add(metadata2);
+//            a_metadata.add(metadata3);
+//        }
        // JSONArray ja_ranges_unordered = JSONArray.fromObject(ranges);
         
         /*
@@ -96,7 +97,8 @@ public class GetManifestServlet extends HttpServlet {
         Since this is a "grab all and store" situation, we will have to traverse the ranges and get them in order here like we do
         with the sort_order algorithm.  
         
-        We should probably do the sequence while we are at it since the leaf ranges will list the canvases, save that for round 2.
+        We should probab
+        ly do the sequence while we are at it since the leaf ranges will list the canvases, save that for round 2.
         
         */
         
@@ -106,19 +108,25 @@ public class GetManifestServlet extends HttpServlet {
         JSONArray ja_canvases;
         JSONArray ja_sequences = new JSONArray();
         JSONObject jo_sequence = new JSONObject();
-        jo_sequence.element("@id", "http://165.134.241.141/brokenBooks/sequence/normal");
+        jo_sequence.element("@id", "http://localhost:8080/brokenBooks/sequence/normal");
         jo_sequence.element("@type", "sc:Sequence");
         JSONObject rv = new JSONObject();
         String canvases = "";
-        if(username.equals("debra")){
-            canvases = getAnnoByProperties("{\"@type\":\"sc:Canvas\",\"forProject\":\"broken_books_debra\"}");
-            jo_sequence.element("label", "Llangattock Canvases");
-            rv.element("label", "Llangattock Breviary");
-        }else if(username.equals("lisa")){
-            canvases = getAnnoByProperties("{\"@type\":\"sc:Canvas\",\"forProject\":\"broken_books_lisa\"}");
-            jo_sequence.element("label", "Beauvais Missal Canvases");
-            rv.element("label", "Beauvais Missal");
-        }
+        canvases = getAnnoByProperties("{\"@type\":\"sc:Canvas\",\"forProject\":\"broken_books_"+username+"\"}");
+//        if(username.equals("debra")){
+//            canvases = getAnnoByProperties("{\"@type\":\"sc:Canvas\",\"forProject\":\"broken_books_debra\"}");
+//            jo_sequence.element("label", "Llangattock Canvases");
+//            rv.element("label", "Llangattock Breviary");
+//        }else if(username.equals("lisa")){
+//            canvases = getAnnoByProperties("{\"@type\":\"sc:Canvas\",\"forProject\":\"broken_books_lisa\"}");
+//            jo_sequence.element("label", "Beauvais Missal Canvases");
+//            rv.element("label", "Beauvais Missal");
+//        }
+//        else if (username.equals("ray")){
+//            canvases = getAnnoByProperties("{\"@type\":\"sc:Canvas\",\"forProject\":\"broken_books_ray\"}");
+//            jo_sequence.element("label", "Ray's Recontruction Canvases");
+//            rv.element("label", "Ray's Recontruction");
+//        }
         if(null != canvases && "" != canvases){
             ja_canvases  = JSONArray.fromObject(canvases);
             jo_sequence.element("canvases", ja_canvases);
@@ -130,11 +138,10 @@ public class GetManifestServlet extends HttpServlet {
         rv.element("@id", url);
         rv.element("@context", context);
         rv.element("@type", type);
-        rv.element("metadata", a_metadata);
+        //rv.element("metadata", a_metadata);
         rv.element("structures", ja_ranges);
         //the canvases need to go into the first object of this array
         rv.element("sequences", ja_sequences);
-        
         response.getWriter().print(rv.toString());
     }
 

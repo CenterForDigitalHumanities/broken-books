@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="mainBlock">
+    <div style="right: -39px;" class="leafPopClose" onclick="closeLeafPopover();"></div>
+    <div id="startProjectLabel">
+            Broken Books Project Creation
+    </div>
+    <div id="provide_manifest" class="projectOption">
+        <label for="projectURL">Enter manifest URL: </label><input id="projectURL" type="text"/>
+    </div>
+    <div id="provide_canvas" class="projectOption">
+        <label for="canvasURL">Enter canvas URL: </label><input id="canvasURL" type="text"/>
+    </div>
+    <div id="provide_image" class="projectOption">
+        <label for="imagePURL">Enter image PURL: </label><input id="imagePURL" type="text"/>
+    </div>
+    <div class="projectInfo">
+        <label for="projectLabel">Project Label: </label><input id="projectLabel" type="text"/>
+        <label for="projectCreator">Project Creator: </label><input id="projectCreator" type="text"/>
+        <label for="projectAnchor">Anchor Object: </label><input id="projectAnchor" type="text"/>
+    </div>
+    <div class="userInfo">
+        <div>
+            A default name has been stored for this public user.  You can choose to update that information
+            now or leave it as the default which is more anonymous.
+        </div>
+        <label for="userName">Enter a name for your agent: </label><input id="userName" type="text"/>
+        <label for="userEmail">Enter an email address: </label><input id="userEmail" type="text"/>
+        <input id="updateUser" type="button" value="Create Manifest" onclick="" />
+    </div>
+    <input id="saveMan" type="button" value="Create Manifest" onclick="" />
+</div>	
+<script>
+    function showUploadness(parent, rv){
+        var url = $("."+rv+"Img:first").attr("src");
+        if(url.indexOf("imgNotFound")===-1){
+            $("textarea[rv='"+rv+"']").val(url);
+        }
+        else{
+            $("textarea[rv='"+rv+"']").val("");
+        }
+        parent.find(".uploadness").show();
+    }
+</script>

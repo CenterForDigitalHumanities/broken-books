@@ -24,6 +24,14 @@
         <servlet-name>saveNewRange</servlet-name>
         <servlet-class>servlet.SaveNewRangeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>bulkSubmitMetadata</servlet-name>
+        <servlet-class>servlet.BulkSubmitMetadata</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>bulkSubmitMetadata</servlet-name>
+        <url-pattern>/bulkSubmitMetadata</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>saveNewRange</servlet-name>
         <url-pattern>/saveNewRange</url-pattern>

@@ -25,8 +25,8 @@ and open the template in the editor.
         <div id="whatPiece">
             <div id="oneAndtwo" canvas="leaf"><input type="file" rv="leaf" class="canvasImageFile" required="true" multiple="false" />
                 <span>Leaf Label: </span><input style="margin-bottom: 17px;" id="oneAndtwoLabel" /> 
-                <img style="z-index:2; left: 10px; top:8px;" class="rectoImg" src="http://165.134.241.141/brokenBooks/images/imgNotFound.png" />
-                <img style="right: 60px; top: -10px; z-index: 1;" class="versoImg" src="http://165.134.241.141/brokenBooks/images/imgNotFound.png" />
+                <img style="z-index:2; left: 10px; top:8px;" class="rectoImg" src="http://localhost:8080/brokenBooks/images/imgNotFound.png" />
+                <img style="right: 60px; top: -10px; z-index: 1;" class="versoImg" src="http://localhost:8080/brokenBooks/images/imgNotFound.png" />
                 <img class="unselectedI" style="" src='../brokenBooks/images/whiteeye.png' onclick="showFullImage('oneAndtwo');"/>
                 <img class="selectedI" style="" src='../brokenBooks/images/blackeye.png' onclick="showFullImage('oneAndtwo');"/>
                 </div>
@@ -38,7 +38,7 @@ and open the template in the editor.
 <!--                    OR<br>
                     <input type="file" rv="recto" class="canvasImageFile" required="true" multiple="false" />-->
                 </div>
-                <img style="top: 20%; transform: translateY(-23%);" onclick="showUploadness($(this).parent(), 'recto');" class="rectoImg" src="http://165.134.241.141/brokenBooks/images/addImgInv.png" />
+                <img style="top: 20%; transform: translateY(-23%);" onclick="showUploadness($(this).parent(), 'recto');" class="rectoImg" src="http://localhost:8080/brokenBooks/images/addImgInv.png" />
                 <img class="unselectedI" src='../brokenBooks/images/whiteeye.png' onclick="showFullImage('folioSide1');"/>
                 <img class="selectedI" src='../brokenBooks/images/blackeye.png' onclick="showFullImage('folioSide1');"/>
                 </div>
@@ -50,7 +50,7 @@ and open the template in the editor.
 <!--                    OR<br>
                     <input type="file" rv="recto" class="canvasImageFile" required="true" multiple="false" />-->
                 </div>
-                <img style="top: 20%; transform: translateY(-23%);" onclick="showUploadness($(this).parent(), 'verso');" class="versoImg" src="http://165.134.241.141/brokenBooks/images/addImgInv.png" />
+                <img style="top: 20%; transform: translateY(-23%);" onclick="showUploadness($(this).parent(), 'verso');" class="versoImg" src="http://localhost:8080/brokenBooks/images/addImgInv.png" />
                 <img class="unselectedI" src='../brokenBooks/images/whiteeye.png' onclick="showFullImage('folioSide2');"/>
                 <img class="selectedI" src='../brokenBooks/images/blackeye.png' onclick="showFullImage('folioSide2');"/>
 
@@ -60,8 +60,8 @@ and open the template in the editor.
     <div id="sideBarArrange">
         Leaf Label:&nbsp;&nbsp; <input type="text" id="leafLabel"/><br>
         <div id='leafTmp'>
-            <img style="left: 74px; top:0px;" class="rectoImg" src="http://165.134.241.141/brokenBooks/images/imgNotFound.png"/>
-            <img style="right: 100px; top: 33px;" class="versoImg" src="http://165.134.241.141/brokenBooks/images/imgNotFound.png"/>
+            <img style="left: 74px; top:0px;" class="rectoImg" src="http://localhost:8080/brokenBooks/images/imgNotFound.png"/>
+            <img style="right: 100px; top: 33px;" class="versoImg" src="http://localhost:8080/brokenBooks/images/imgNotFound.png"/>
         </div>
         <!-- <div id="arrangeCrumb">
             <div>This leaf belongs to: </div>

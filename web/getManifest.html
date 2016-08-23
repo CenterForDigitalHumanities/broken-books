@@ -108,46 +108,55 @@ Ray Celemens at Yale, Curator of Manuscripts.  Offload work off to him.
     </body>
 </html>
 <script>
-   $(function(){
-       var manifestURI = "http://165.134.241.141/brokenBooks/getManifest.html";
-       var miradorURI = "";
-       var thisURL = document.location.href;
-       if (thisURL.indexOf("?LFD") > -1 ){
-           miradorURI = "http://165.134.241.141/brokenBooks/getManifest?username=lisa";
-           manifestURI+="?LFD";
-           //http://165.134.241.141/annotationstore/annotation/57571eb2e4b07d5115bddd64
-       }
-       else if(thisURL.indexOf("?DTC") > -1 ){
-           miradorURI = "http://165.134.241.141/brokenBooks/getManifest?username=debra";
-           manifestURI+="?DTC";
-           //http://165.134.241.141/annotationstore/annotation/57571b9be4b028e25c81a3ca
-       }
-       else if(thisURL.indexOf("?RC") > -1 ){
-           miradorURI = "http://165.134.241.141/brokenBooks/getManifest?username=ray";
-           manifestURI+="?RC";
-       }
-       else{
-           miradorURI = "http://165.134.241.141/brokenBooks/getManifest?username=debra";
-           manifestURI+="?DTC";
-       }
+    $(function(){
+        var manifestURI = "http://localhost:8080/brokenBooks/getManifest.html";
+        var miradorURI = "unknown";
+        var thisURL = document.location.href;
+        if (thisURL.indexOf("?LFD") > -1 ){
+            //miradorURI = "http://localhost:8080/brokenBooks/getManifest?username=lisa";
+            manifestURI+="?LFD";
+        }
+        else if(thisURL.indexOf("?RC") > -1 ){
+            //miradorURI = "http://localhost:8080/brokenBooks/getManifest?username=debra";
+            manifestURI+="?RC";
+            //http://localhost:8080/annotationstore/annotation/577fca85e4b0dbe2fb5deef5
+        }
+        else if(thisURL.indexOf("?DTC") > -1 ){
+            manifestURI+="?DTC";
+            //http://localhost:8080/annotationstore/annotation/577d2cace4b075dfb3779f08
+        }
+        else{ //Some other default if I dont have a user? FIXME
+           // miradorURI = "http://localhost:8080/brokenBooks/getManifest?username=debra";
+            manifestURI+="?DTC";
+        }
         window.history.pushState("Object", "Title", manifestURI);
         var windowHeight = window.innerHeight - 25;
         $("#focusedRange").css("height", windowHeight+"px");
-        //https://github.com/IIIF/mirador/wiki/Complete-Configuration-API
-        Mirador({
-            "id": "focusedRange", // The CSS ID selector for the containing element.
-            "layout": "1x1", // The number and arrangement of windows ("row"x"column")?
-            "data": [{"manifestUri": miradorURI, "location": "Saint Louis University"}], //always says this in manifest list section...do we want this?
-            "workspaceType": "singleObject",
-            "mainMenuSettings" : {"buttons" : {"bookmark" : false, "layout" : true, "fullScreenViewer": true, "options":false}},
-            "windowObjects" : [
-                {
-                    "loadedManifest": miradorURI,
-                    "viewType" : "ImageView",
-                    "availableViews" : ['ThumbnailsView', 'ImageView', 'ScrollView'],
-                    "fullScreen" : false
-                }
-            ]
-        });
+        var forProject = detectWho();
+        var properties={"@type" : "sc:Manifest", "forProject":forProject};
+        //this will be superfluous when the annotation store has ranges from other projects
+        var url="http://localhost:8080/brokenBooks/getAnnotationByPropertiesServlet";
+        var params = {"content" : JSON.stringify(properties)};
+        //console.log("GET RANGES LIVE");
+        $.post(url, params, function(data){
+           var manifest_data = JSON.parse(data);
+           miradorURI = manifest_data[0]["@id"];
+           //https://github.com/IIIF/mirador/wiki/Complete-Configuration-API
+            Mirador({
+                "id": "focusedRange", // The CSS ID selector for the containing element.
+                "layout": "1x1", // The number and arrangement of windows ("row"x"column")?
+                "data": [{"manifestUri": miradorURI, "location": "Saint Louis University"}],
+                "workspaceType": "singleObject",
+                "mainMenuSettings" : {"buttons" : {"bookmark" : false, "layout" : true, "fullScreenViewer": true, "options":false}},
+                "windowObjects" : [
+                    {
+                        "loadedManifest": miradorURI,
+                        "viewType" : "ImageView",
+                        "availableViews" : ['ThumbnailsView', 'ImageView', 'ScrollView'],
+                        "fullScreen" : false
+                    }
+                ]
+            });
+        }); 
    });
 </script>

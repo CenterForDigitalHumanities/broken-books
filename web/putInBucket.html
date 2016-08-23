@@ -65,6 +65,9 @@
             #createMini{
                 display: none;
             }
+            .prepareleaf{
+                display: none;
+            }
             </style>
 	</head>
 	<body>
@@ -94,6 +97,7 @@ if(windowurl.indexOf("home.html") === -1){
     document.write('<script src="../brokenBooks/js/bb.js"><\/script>');
 }
 	$(function(){
+                getManifestID();
 		$(".leafPopover").load("../brokenBooks/leafPopover.html", function(){
                     $(".leaf").load("../brokenBooks/leafInformation.html", function(){
                         console.log("SET TABS");
@@ -163,6 +167,51 @@ if(windowurl.indexOf("home.html") === -1){
                         });
                     });
                 });
-	});
-		
+	});	
+        
+        function emptyRaySequence(){
+            var seq = {
+                "@type" : "sc:Sequence",
+                "label" : "S",
+                "canvases" : []
+            };
+            var postURL = "http://165.134.241.141/brokenBooks/updateRange";
+            var paramObj1 = {"@id" : "http://165.134.241.141/annotationstore/annotation/577fca85e4b0dbe2fb5deef5", "sequences":[seq]};
+            var params1 = {"content" : JSON.stringify(paramObj1)};
+            $.post(postURL, params1, function(rootRangeList){
+                
+            });
+        }
+        
+        function emptyRayStructures(){
+            var rootRange = {
+                    "@type" : "sc:Range",
+                    "parent" : "paggr_ray",
+                    "within" : "root",
+                    "otherContent" : [ ],
+                    "canvases" : [ ],
+                    "label" : "Table of Contents",
+                    "forProject" : "broken_books_ray",
+                    "originalAnnoID" : "",
+                    "version" : 1,
+                    "permission" : 0,
+                    "forkFromID" : "",
+                    "serverName" : "local",
+                    "serverIP" : "127.0.0.1",
+                    "@id" : "http://165.134.241.141/annotationstore/annotation/577e96e9e4b09874ecdc304b",
+                    "ranges" : [ ]
+            };
+
+            var postURL = "http://165.134.241.141/brokenBooks/updateRange";
+            var paramObj1 = {"@id" : "http://165.134.241.141/annotationstore/annotation/577fca85e4b0dbe2fb5deef5", "structures":[rootRange]};
+            var params1 = {"content" : JSON.stringify(paramObj1)};
+            $.post(postURL, params1, function(rootRangeList){
+                
+            });
+            var paramObj2 = {"@id" : "http://165.134.241.141/annotationstore/annotation/577e96e9e4b09874ecdc304b", "ranges":[]};
+            var params2 = {"content" : JSON.stringify(paramObj2)};
+            $.post(postURL, params2, function(rootRangeList2){
+                
+            });
+        }
 </script>
