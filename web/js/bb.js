@@ -5183,8 +5183,7 @@ function populateAnnoForms(){
                         "within" : "root",
                         "otherContent" : [],
                         "previous":"",
-                        "isOrdered" : "false",
-                        "previous" : ""
+                        "isOrdered" : "false"
         		};
                         currentLeaf = "http://www.example.org/iiif/LlangBrev/range/"+rangeID; //local
                         createNewRange(leafRangeObject, 'currentLeaf', "", "", "");
