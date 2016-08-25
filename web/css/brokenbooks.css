@@ -662,6 +662,22 @@ and open the template in the editor.
                 right: -1px;
                 top: -2px;
             }
+            
+            .arrangeSection.ordered{
+                margin-bottom:0px
+            }
+/*            .arrangeSection[lockedup="true"]{
+                margin-top:0px;
+            }
+            .arrangeSection[lockedup="false"]{
+                margin-top:30px;
+            }
+            .arrangeSection[lockeddown="true"]{
+                margin-bottom:0px;
+            }
+            .arrangeSection[lockeddown="true"]{
+                margin-bottom:30px;
+            }*/
 
             .arrangeSection{
                 display: block;
@@ -669,11 +685,11 @@ and open the template in the editor.
                 cursor: pointer;
                 text-align: center;
                 padding: 8px 8px 8px 8px;
-                margin-bottom: 8px;
                 border: 2px solid black;
                 font-size: 15px;
                 font-family: serif;
-                padding: 13px 72px 13px 21px;           
+                padding: 13px 72px 13px 21px;  
+                margin-bottom: 30px;
                 /* user cannot select text */
                 -webkit-touch-callout: none;
                 -webkit-user-select: none;
