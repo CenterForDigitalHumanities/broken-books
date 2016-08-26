@@ -663,18 +663,15 @@ and open the template in the editor.
                 top: -2px;
             }
             
-            .arrangeSection.ordered{
-                margin-bottom:0px
-            }
-/*            .arrangeSection[lockedup="true"]{
-                margin-top:0px;
-            }
-            .arrangeSection[lockedup="false"]{
-                margin-top:30px;
-            }
+
             .arrangeSection[lockeddown="true"]{
                 margin-bottom:0px;
             }
+/*            
+            .arrangeSection[lockedup="false"]{
+                margin-top:30px;
+            }
+            
             .arrangeSection[lockeddown="true"]{
                 margin-bottom:30px;
             }*/
@@ -873,58 +870,25 @@ and open the template in the editor.
             }
             .lockUp{
                 position: absolute;
-                top: -1px;
                 color: #008000;
                 font-size: 21px;
                 font-weight: bold;
-                right: 30px;
                 z-index: 3 !important;
                 background-image: url("../images/lockoffup.png");
                 background-size: 25px 25px;
                 height: 25px;
                 width: 25px;
                 display: block;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                top: 45px;
             }
-            .lockDown{
-                position: absolute;
-                top: 21px;
-                color: #008000;
-                font-size: 20px;
-                font-weight: bold;
-                right: 30px;
-/*                -ms-transform: rotate(180deg);  IE 9 
-                -webkit-transform: rotate(180deg);  Chrome, Safari, Opera 
-                transform: rotate(180deg);*/
-                z-index: 3!important;
-                background-image: url("../images/lockoffdown.png");
-                background-size: 25px 25px;
-                height: 25px;
-                width: 25px;
-                display: block;
-            }
-            .lockDown:hover{
-                cursor: pointer;
-            }
+            
             .lockUp:hover{
                 cursor: pointer;
             }
-            .lockedDown{
-                position: absolute;
-                top: 21px;
-                color: #008000;
-                font-size: 20px;
-                font-weight: bold;
-                right: 26px;
-/*                -ms-transform: rotate(180deg);  IE 9 
-                -webkit-transform: rotate(180deg);  Chrome, Safari, Opera 
-                transform: rotate(180deg);*/
-                z-index: 3!important;
-                background-image: url("../images/lockondown.png");
-                background-size: 25px 25px;
-                height: 25px;
-                width: 25px;
-                display: block;
-            }
+            
             .lockedUp{
                 position: absolute;
                 top: -1px;
@@ -939,12 +903,12 @@ and open the template in the editor.
                 width: 25px;
                 display: block;
             }
-            .ordered{
+/*            .ordered{
                 padding: 0px !important;
                 border: none !important;
                 margin: 0px;
                 display: block !important;
-            }
+            }*/
             
             .parent .ordered{
                 display: none !important;
