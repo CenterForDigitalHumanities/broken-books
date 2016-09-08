@@ -35,18 +35,7 @@ and open the template in the editor.s
                 padding: 0px 0px 29px 0px;
                 overflow: hidden;
             }
-            #hdrLogo{
-                height: 100px;
-                width: auto;
-                display: inline-block;
-                background-color: #FFF;
-                top: -13px;
-                position: relative;
-                left: 32px;
-            }
-            #BBlogo{
-                height: 100px;
-            }
+            
             #hdrLinks{
                 border-top: 1px solid #003961;
                 border-bottom: 1px solid #003961;
@@ -529,6 +518,7 @@ and open the template in the editor.s
                                     };
                             }
                         });
+                        
 //                        gatherRangesForArrange(1); //populate the popover
 //                        $("#folioSide1").attr("onclick","enterCatalogueInfo('http://www.example.org/iiif/LlangBrev/canvases/demo1', 'recto');"); //local
 //                        $("#folioSide1").attr("canvas","http://www.example.org/iiif/LlangBrev/canvases/demo1"); //local
@@ -536,6 +526,29 @@ and open the template in the editor.s
 //                        $("#folioSide2").attr("canvas","http://www.example.org/iiif/LlangBrev/canvases/demo2"); //local
 //                        $("#folioSie1").click();
                     });
+            });
+            $(".putInGroup").on("change", function(){
+                var lockedUp = false;
+                var lockedDown = false;
+                if($(this).parent().attr("lockedup") === "true")lockedUp=true;
+                if($(this).parent().attr("lockeddown") === "true")lockedDown=true;
+                if(lockedUp || lockedDown){
+                    $(this).attr('checked', false);
+                    if(lockedUp){
+                        $(this).parent().prev().find("lockedUp").css("background-color","red");
+                    }
+                    else if(lockedDown){
+                        $(this).parent().find("lockedUp").css("background-color","red");
+                    }
+                    alert("You cannot merge locked objects.  If you would like them to be in their own sections, create an empty\n\
+                    section then drag and drop the objects into the new empty section.  The locked object has been unchecked.");
+                    if(lockedUp){
+                        $(this).parent().prev().find("lockedUp").css("background-color","white");
+                    }
+                    else if(lockedDown){
+                        $(this).parent().find("lockedUp").css("background-color","white");
+                    }
+                }
             });
      
  });

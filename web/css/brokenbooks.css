@@ -7,6 +7,18 @@ and open the template in the editor.
     Created on : Mar 23, 2015, 12:24:59 PM
     Author     : bhaberbe
 */
+            #hdrLogo{
+                height: 100px;
+                width: auto;
+                display: inline-block;
+                background-color: #FFF;
+                top: -13px;
+                position: relative;
+                left: 32px;
+            }
+            #BBlogo{
+                height: 100px;
+            }
             .removeInfo{
                 font-size: 14px;
                 color: red;
@@ -665,16 +677,8 @@ and open the template in the editor.
             
 
             .arrangeSection[lockeddown="true"]{
-                margin-bottom:0px;
+                margin-bottom:3px;
             }
-/*            
-            .arrangeSection[lockedup="false"]{
-                margin-top:30px;
-            }
-            
-            .arrangeSection[lockeddown="true"]{
-                margin-bottom:30px;
-            }*/
 
             .arrangeSection{
                 display: block;
@@ -687,6 +691,8 @@ and open the template in the editor.
                 font-family: serif;
                 padding: 13px 72px 13px 21px;  
                 margin-bottom: 30px;
+                min-width: 112px;
+                left: 12px;
                 /* user cannot select text */
                 -webkit-touch-callout: none;
                 -webkit-user-select: none;
@@ -715,6 +721,11 @@ and open the template in the editor.
                 display: inline-block;
                 margin: 0 auto;
                 position: relative;
+            }
+            
+            .arrangeSection[leaf="true"]{
+                padding: 13px 33px 13px 21px !important;
+                color: rgb(0,54,99);
             }
             
             .popoverTrail .arrangeSection{
@@ -748,20 +759,22 @@ and open the template in the editor.
             }
 
             .rangeArrangementArea{
-                display: inline-block;
+                display: inline-table;
+                /*display: inline-block;*/
                 position: relative;
                 border-right: 2px solid black;
-                padding-right: 21px;
+                /*padding-right: 21px;*/
+                padding-right: 5px;
                 margin-right: 10px;
                 height: auto;
-                overflow-y: auto;
-                height: 512px;
+                /*overflow-y: auto;*/
+/*                height: 512px;*/
                 /*text-align: center;*/
                 
             }
             .areaCover{
                 position: absolute;
-                top: 0;
+                top: 28px;
                 left: -6px;
                 width: 100%;
                 height: 90%;
@@ -781,7 +794,7 @@ and open the template in the editor.
             }*/
             .putInGroup{
                 position: absolute;
-                left: 0px;
+                left: -22px;
                 top: 9px;
             }
             #newGroupTitleArea{
@@ -874,15 +887,14 @@ and open the template in the editor.
                 font-size: 21px;
                 font-weight: bold;
                 z-index: 3 !important;
-                background-image: url("../images/lockoffup.png");
-                background-size: 25px 25px;
+                background-image: url("../images/unlocked.png");
+                background-size: 28px 28px;
                 height: 25px;
                 width: 25px;
                 display: block;
-                margin: 0 auto;
-                left: 0;
-                right: 0;
+                right: -28px;
                 top: 45px;
+
             }
             
             .lockUp:hover{
@@ -891,15 +903,15 @@ and open the template in the editor.
             
             .lockedUp{
                 position: absolute;
-                top: -1px;
+                right: -33px;
+                top: 20px;
                 color: #008000;
                 font-size: 21px;
                 font-weight: bold;
-                right: 26px;
                 z-index: 3 !important;
-                background-image: url("../images/lockonup.png");
-                background-size: 25px 25px;
-                height: 25px;
+                background-image: url("../images/locked.png");
+                background-size: 25px 50px;
+                height: 50px;
                 width: 25px;
                 display: block;
             }
@@ -983,10 +995,11 @@ and open the template in the editor.
                 z-index: 10;
             }
             .customPlaceholder{
-                height: 48px;
-                margin-top: 5px;
-                margin-bottom: 5px;
+                height: 30px;
+                margin-top: 10px;
+                margin-bottom: 10px;
                 background-color: #093985;
+                margin-left:22px;
             }
             .dropColor{
                 color: white;
@@ -1052,9 +1065,9 @@ and open the template in the editor.
                 left: 16%;
                 background-color: #000;
                 display: none;
-                padding: 38px 13px;
+                padding: 38px 32px;
                 width: 291px;
-                height: 151px;
+                height: auto;
                 z-index: 6;
                 top: 5px;
             }
@@ -1073,14 +1086,219 @@ and open the template in the editor.
                 font-size: 12px;
                 font-weight: bold;
                 display: block;
-                top: 30%;
+                top: 4px;
                 position: relative;
+            }
+            .popupContentWrapper{
+                color:white;
+                position: relative;
+                font-family: sans-serif;
+                font-size: 14px;
             }
             #newGroupTitle{
                 width: 100%;
                 border: 1px solid black;
+                position: relative;
+                top: 5px;
+                height: 25px;
+                font-size: 18px;
+                margin-top: 3px;
             }
             #groupTitle{
                 position: relative;  display: inline-block; top: 6px;
                 width: 335px;
+            }
+            .sortTitle{
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                font-size: 18px;
+                z-index: 5;
+                width: 258px;
+                top: 43px;
+            }
+            
+            .publishTitle{
+                display: block;
+                position: relative;
+                text-align: center;
+                z-index: 5;
+            }
+            
+            
+            #syncNotice, #syncNotice_load{
+                left: 0px; 
+                right: 0px; 
+                margin: 0 auto; 
+                top: 131px;
+                display: none
+            }
+            
+            #syncNotice, #gotIT{
+                display: none;
+            }
+            
+            .syncText{
+                padding: 8px;
+                margin-bottom: 5px;
+                font-family:sans-serif;
+            }
+            
+            #syncNotice img{
+                position: relative;
+                display: block;
+                margin: 0 auto;
+                top: 16px;
+                height: 120px;
+            }
+            .columnActions{
+                margin-bottom: 7px;
+                border-bottom: 1px dashed gray;
+                padding-bottom: 5px;
+                text-align: center;
+            }
+            #hdrLogo{
+                height: auto;
+                width: auto;
+                display: inline-block;
+                background-color: #FFF;
+                top: -1px;
+                position: relative;
+                left: 32px;
+            }
+            #BBlogo{
+                height: 85px;
+            }
+            .breakContent{
+                margin-top: 4px;
+            }
+            #dragCloneHelp{
+                position: absolute;
+                top:0px;
+                right:0px;
+                width: 500px;
+                height: 100%;
+                background-color:white;
+                z-index: 4;
+            }
+            .newLabel{
+                margin-bottom: 5px;
+                width: 156px;
+                margin-left: 3px;
+                margin-top: 3px;
+                height: 20px;
+                font-size: 14px;
+            }
+            .hidden {
+                display:none !important;
+            }
+            .helper{
+                margin-left:0px !important;
+            }
+            .addLacuna{
+                display: none;
+            
+            }
+            #gotoMirador:disabled, #publishBtn:disabled{
+                background-color: gray;
+            }
+            #gotoMirador{
+                padding: 3px 0px;
+                display: inline-block;
+                background-color: #791C2D !important;
+                width: auto;
+                font-size: 16px;
+                font-weight: bold;
+                font-family: sans-serif;
+                text-align: center;
+                color: white;
+                right: 5px;
+                position: absolute;
+                cursor: pointer;
+                top: 64px;
+                z-index: 5;
+            }
+            
+/*            #publishBtn{
+                padding: 10px;
+                border: 3px solid #791C2D;
+            }*/
+            
+            #publishBtn{
+                padding: 3px 0px;
+                display: block;
+                background-color: #791C2D !important;
+                width: auto;
+                font-size: 16px;
+                font-weight: bold;
+                font-family: sans-serif;
+                text-align: center;
+                color: white;
+                right: 5px;
+                position: absolute;
+                cursor: pointer;
+                top: 9px;
+                z-index: 5;
+            }
+            
+            #mainBlockHelp{
+                display: none;
+                position: fixed;
+                margin: 0 auto;
+                height: 80%;
+                overflow-y: auto;
+                border-radius: 25px;
+                top:15px;
+            }
+            #mainBlockHelp h4{
+                margin: 5px 10px !important;
+                text-align: left !important;
+                color: #6D6E7B;
+                font-family: sans-serif;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            #mainBlockHelp h3{
+                margin: 5px 10px !important;
+                text-align: left !important;
+                color: #6D6E7B;
+                font-family: sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                border-bottom: 1px solid black;
+            }
+            #mainBlockHelp p{
+                padding: 0px !important;
+                text-align: left !important;
+                margin: 0px 10px !important;
+                color: #6D6E7B;
+                font-family: sans-serif;
+                font-size: 14px;
+                word-wrap: break-word;
+            }
+            
+            #mainBlockHelp a {
+                padding: 0px !important;
+                text-align: left !important;
+                color: #6D6E7B;
+                font-family: sans-serif;
+                font-size: 14px;
+                text-decoration: underline;
+            }
+            #mainBlockHelp a:selected {
+                padding: 0px !important;
+                text-align: left !important;
+                color: #6D6E7B;
+                font-family: sans-serif;
+                font-size: 14px;
+                text-decoration: underline;
+            }
+            #mainBlockHelp .demoContent{
+                padding: 5px 0px;
+                
+            }
+            .addLacuna{
+                display: none;
             }

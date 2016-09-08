@@ -99,9 +99,53 @@ Ray Celemens at Yale, Curator of Manuscripts.  Offload work off to him.
             #focusedRange{
                 width:98%;
             }
+       
+            #syncConfirm{
+                left: 0px; 
+                right: 0px; 
+                margin: 0 auto; 
+                top: 131px;
+                height: auto;
+                display: block;
+                z-index:5;
+            }
+            .syncText{
+                padding: 6px;
+                font-family: sans-serif;
+            }
+            .bbButton{
+                font-size: 80%;
+                margin-top:4px;
+            }
+            .confirmCover{
+                width: 100%;
+                height: 100%;
+                z-index: 5;
+                background-color: #000;
+                opacity: 0.8;
+                position: absolute;
+                left: 0;
+                top: 0;    
+            }
+/*            .mainBlock{
+                display: none;
+            }*/
+
         </style>
     </head>
     <body>
+        <div class="confirmCover"></div>
+        <div id="syncConfirm" class="helPop" style="">
+            <div style="left:22px;" class="popHdr">Data Notice</div>
+            <div class="syncText" style="background-color:white;">
+                The viewer will display your manifest object as it was known when entering the page.  If you have this open and make
+                changes in the arrange page, those changes will not be visible until the manifest is synced with the changes and
+                this page is refreshed.
+            </div>
+            <div>
+                <input style="position: relative; left: 235px;" class="bbButton" type="button" value="Got It!" onclick="showMirador();"/>
+            </div>
+        </div>
         <div class="mainBlock" id="focusedRange">
 
         </div>
@@ -159,4 +203,9 @@ Ray Celemens at Yale, Curator of Manuscripts.  Offload work off to him.
             });
         }); 
    });
+   
+   function showMirador(){
+       $("#syncConfirm").hide();
+       $(".confirmCover").hide();
+   }
 </script>

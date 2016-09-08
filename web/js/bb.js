@@ -999,7 +999,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/parent_aggr",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Llangattock Breviary Structure",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/1",
@@ -1015,7 +1015,7 @@ var testManifest = {
 },    
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/1",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Calendar",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/7",
@@ -1033,7 +1033,7 @@ var testManifest = {
 
 { //A connection of content can be made like this, but not fragments
   "@id":"http://www.example.org/iiif/LlangBrev/range/2",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Temporale",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/13",
@@ -1048,7 +1048,7 @@ var testManifest = {
 
 {//A connection of content can be made like this, but not fragments
   "@id":"http://www.example.org/iiif/LlangBrev/range/3",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Psalter",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/16",
@@ -1064,7 +1064,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/4",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Sanctorale",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/19",
@@ -1077,7 +1077,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/5",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Auxilary Texts",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/22",
@@ -1092,7 +1092,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/7",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"January",
   "ranges" : [
     "http://www.example.org/iiif/LlangBrev/range/25"
@@ -1104,7 +1104,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/8",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"February",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/26"
@@ -1115,7 +1115,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/9",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"March",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/27"
@@ -1127,7 +1127,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/10",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"April",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/28"
@@ -1139,7 +1139,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/11",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"May",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/29"
@@ -1151,7 +1151,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/12",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"June",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/30"
@@ -1163,7 +1163,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/13",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Advent - Epiphany",
   "ranges" : [
     "http://www.example.org/iiif/LlangBrev/range/31", 
@@ -1176,7 +1176,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/14",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Pre-Lent through Ascension",
   "ranges" : [
     "http://www.example.org/iiif/LlangBrev/range/33", 
@@ -1189,7 +1189,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/15",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Pentecost to Advent",
   "ranges" : [
     "http://www.example.org/iiif/LlangBrev/range/35", 
@@ -1202,7 +1202,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/16",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Psalms 1-50",
   "ranges" : [
     "http://www.example.org/iiif/LlangBrev/range/37", 
@@ -1215,7 +1215,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/17",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Psalms 51-100",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/39", 
@@ -1228,7 +1228,7 @@ var testManifest = {
 
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/18",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Psalms 101-150",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/41", 
@@ -1240,7 +1240,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/19",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Andrew (Nov 30)-Petronilla(May31)",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/46",
@@ -1252,7 +1252,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/20",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Marcellinus (June 2)â€“Satirinus(Nov 29)",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/48",
@@ -1264,7 +1264,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/21",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Common of Saints",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/43"
@@ -1275,7 +1275,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/22",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Office of the Virgin",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/50"
@@ -1286,7 +1286,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/23",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Office of the Dead",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/51"
@@ -1297,7 +1297,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/24",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Miscellaneous",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/52"
@@ -1308,7 +1308,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/25",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"January Text",
   "ranges" : [
       
@@ -1319,7 +1319,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/26",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"February Text",
   "ranges" : [
       
@@ -1330,7 +1330,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/27",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"March Text",
   "ranges" : [
       
@@ -1341,7 +1341,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/28",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"April Text",
   "ranges" : [
       
@@ -1352,7 +1352,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/29",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"May Text",
   "ranges" : [
       
@@ -1363,7 +1363,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/30",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"June Text",
   "ranges" : [
       
@@ -1374,7 +1374,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/31",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Advent Text",
   "ranges" : [
       
@@ -1385,7 +1385,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/32",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Epiphany Text",
   "ranges" : [
       
@@ -1396,7 +1396,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/33",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Pre-Lent Text",
   "ranges" : [
       
@@ -1407,7 +1407,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/34",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Ascension Text",
   "ranges" : [
       
@@ -1418,7 +1418,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/35",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Pentecost Text",
   "ranges" : [
       
@@ -1429,7 +1429,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/36",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Advent After Pentecost Text",
   "ranges" : [
       
@@ -1440,7 +1440,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/37",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Psalms 1-11 Text",
   "ranges" : [
       
@@ -1451,7 +1451,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/38",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Psalms 41-50 Text",
   "ranges" : [
       
@@ -1462,7 +1462,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/39",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Psalms 51-61 Text",
   "ranges" : [
       
@@ -1473,7 +1473,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/40",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Psalms 91-100 Text",
   "ranges" : [
       
@@ -1484,7 +1484,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/41",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Psalms 101-111 Text",
   "ranges" : [
       
@@ -1495,7 +1495,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/42",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Psalms 141-150 Text",
   "ranges" : [
       
@@ -1506,7 +1506,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/43",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Apostles, Martyrs, Confessors, Virgins",
   "ranges" : [
       "http://www.example.org/iiif/LlangBrev/range/44",
@@ -1518,7 +1518,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/44",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Apostles Text",
   "ranges" : [
 
@@ -1529,7 +1529,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/45",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Virgins Text",
   "ranges" : [
 
@@ -1540,7 +1540,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/46",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Andrew Text",
   "ranges" : [
 
@@ -1551,7 +1551,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/47",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Petronilla Text",
   "ranges" : [
 
@@ -1562,7 +1562,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/48",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Marcellinus Text",
   "ranges" : [
 
@@ -1573,7 +1573,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/49",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Saturinus Text",
   "ranges" : [
 
@@ -1584,7 +1584,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/50",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Office of the Virgin Text",
   "ranges" : [
 
@@ -1595,7 +1595,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/51",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Office of the Dead Text",
   "ranges" : [
 
@@ -1606,7 +1606,7 @@ var testManifest = {
 },
 {
   "@id":"http://www.example.org/iiif/LlangBrev/range/52",
-  "@type":"sc:Range",
+  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
   "label":"Miscellaneous Text",
   "ranges" : [
 
@@ -1617,7 +1617,7 @@ var testManifest = {
 }
 //{
 //  "@id":"http://www.example.org/iiif/LlangBrev/range/53",
-//  "@type":"sc:Range",
+//  "@type":"sc:Range","lockedup":"false","lockeddown":"false","isOrdered":"false",
 //  "label":"Demo Test Leaf",
 //  "ranges" : [
 //
@@ -2296,11 +2296,12 @@ function getAllCanvases(){
 function changeLabel(range, paginate, event){
     var currentLabel = $("div[rangeid='"+range+"']").children("span:first").html().replace("<br>", "");
     var labelConfirm = $("<div style='padding: 11px 13px; height:100px; display:block; width:auto;' class='labelConfirm helPop' lblrange='"+range+"'>\n\
-       <div style='position: relative; top:0px; left:0px; ' class='popHdr'>Change Label</div>\n\
-       <div class='demoContent'>\n\
-       <input style='margin-bottom: 5px; width: 156px; margin-left: 3px;'  class='newLabel' type='text' placeholder='"+currentLabel+"'/> <br>\n\
-       <input value='Save' type='button' onclick=\"updateLabel('"+range+"', '"+currentLabel+"');\" />\n\
-       <input value='Cancel' type='button' onclick='$(this).parent().parent().remove()'/></div></div>");
+       <div style='position: relative; top:0px; left:0px; margin-bottom:5px; ' class='popHdr'>Change Label</div>\n\
+       <div class=''>\n\
+       <input id='changeTheLabel' style=''  class='newLabel' type='text' placeholder='"+currentLabel+"'/> <br>\n\
+       </div>\n\
+        <input value='Save' type='button' onclick=\"updateLabel('"+range+"', '"+currentLabel+"');\" />\n\
+        <input value='Cancel' type='button' onclick='$(this).parent().remove()'/></div>");
     var x = event.pageX;
     var y = event.pageY;
     //if($(".labelConfirm").length == 0){
@@ -2330,6 +2331,7 @@ function updateLabel(range, currentLabel){
                 $(this).children("span:first").html(newLabel);
             });
            $("div[lblrange='"+range+"']").remove();
+           populateMessage("Label updated!");
         }
         else{
            //updateInManifest("structures",paramObj1);
@@ -2340,6 +2342,7 @@ function updateLabel(range, currentLabel){
                    $(this).children("span:first").html(newLabel);
                });
                $("div[lblrange='"+range+"']").remove();
+               populateMessage("Label updated!");
            });
         }
         
@@ -2389,10 +2392,12 @@ function toggleChildren(parentRange, admin, event){
   var labelHTML = '<div class="rAreaLabel">'+newAreaLabel+'</div>';
   var actualDepth = parseInt(outer.find(".rangeArrangementArea").length);
   var sortOrder = "";
-  var extraButtons = '<input class="makeGroup" value="merge" type="button" onclick="askForNewTitle($(this).parent());"/>\n\
-                    <input class="addGroup" value="add" type="button" onclick="newGroupForm($(this).parent());"/>\n\
-                    <input class="makeSortable" value="sort" type="button" onclick="makeSortable($(this).parent());"/>\n\
-                    <input class="doneSortable" value="done" type="button" onclick="stopSorting($(this).parent());"/>';
+  var extraButtons = '<div class="columnActions">\n\
+                    <input class="makeGroup" value="merge" type="button" onclick="askForNewTitle($(this).parent());"/>\n\
+                    <input class="addGroup" value="add" type="button" onclick="newGroupForm($(this).parent().parent(), false);"/>\n\
+                    <input class="addLacuna" value="lacuna" type="button" onclick="newGroupForm($(this).parent().parent(), true);"/>\n\
+                    <input class="makeSortable" value="sort" type="button" onclick="makeSortable($(this).parent().parent());"/>\n\
+                    <input class="doneSortable" value="done" type="button" onclick="stopSorting($(this).parent().parent());"/></div>';
   if(admin === "admin"){
       dropAttribute = "ondragover='dragOverHelp(event);' ondrop='dropHelp(event);'";
       sortOrder = " sortOrder";
@@ -2407,8 +2412,8 @@ function toggleChildren(parentRange, admin, event){
   else{
     intendedDepth = parseInt(parentRange.parent().parent().attr("depth")) + 1;
   }
-  var newArea = $("<div depth='"+intendedDepth+"' relation='"+relation+"' rangeID='"+relation+"' class='rangeArrangementArea'>"+labelHTML+"<div "+dropAttribute+" class='notBucket'></div></div>");
-  var newAreaBucket = $('<div onclick=\'toggleChildren($(this), "admin", event);\' '+dropAttribute+' rangeID="'+relation+'"" class="arrangeSection parent unassigned '+sortOrder+'"><span>Unassigned</span></div>'+extraButtons);
+  var newArea = $("<div depth='"+intendedDepth+"' relation='"+relation+"' rangeID='"+relation+"' class='rangeArrangementArea'>"+extraButtons+" "+labelHTML+" <div "+dropAttribute+" class='notBucket'></div></div>");
+  var newAreaBucket = $('<div onclick=\'toggleChildren($(this), "admin", event);\' '+dropAttribute+' rangeID="'+relation+'"" class="arrangeSection parent unassigned '+sortOrder+'"><span>Unassigned</span></div>');
   newArea.append(newAreaBucket);
   //newArea.disableSelection();
   var existingInCopy = [];
@@ -2617,22 +2622,10 @@ function toggleChildren(parentRange, admin, event){
     else{
       if(newArea.children('.selectedSection').length == 0){
           //makes the bucket the selected section.  we will want this back, for now we are hiding the unassigned areas.
-        //newArea.children('.unassigned').addClass("selectedSection");
+            //newArea.children('.unassigned').addClass("selectedSection");
       }
     }    
   } 
-}
-
-function dragEnd(event){
-    $( event.dragProxy ).remove();
-//    $(".dragThis").animate({
-//            top: event.offsetY,
-//            left: event.offsetX,
-//            opacity: 1
-//    })
-    $(".dragCover").remove();
-    $(".dragHelper").remove();
-    
 }
 
 function chainLockedRanges(currentObj){
@@ -2668,22 +2661,45 @@ function chainTargets(currentTarget){
 
 function dragHelp(event){
     //http://www.kryogenix.org/code/browser/custom-drag-image.html
-    //TODO need to set a custom drag image for the chain of object we recieve back.
-    //Place them all in a wrapper div, put them to screen and hide them, then make that the image (like in URL).
     var currentObj = $(event.target);
-    console.log("trying to drag...");
-    console.log(event.target);
     var textArray = chainLockedRanges(currentObj);
-    //var targets = chainTargets(event.target);
-    console.log("The chain is...");
-    console.log(textArray);
-    //console.log(targets);
-    //event.target = targets;
+    var targets = chainTargets(event.target);
+    var crt = document.createElement("div");
+    crt.setAttribute("id", "dragClone");
+    for(var i = 0; i < targets.length; i++) {
+        var targetClone = targets[i].cloneNode(true);
+        crt.appendChild(targetClone); // Note that this does NOT go to the DOM
+    }
+    crt.style.position = "absolute"; 
+    crt.style.top = "0px"; 
+    crt.style.right = "200px";
+    crt.style["z-index"] = "0";
+    document.body.appendChild(crt);
+    console.log(crt);
     event.dataTransfer.setData("text", textArray);
-    //console.log("drag help, here is the id: "+event.target.id);
-   
+    event.dataTransfer.setDragImage(crt, 0, 0);
+    
 }
 
+
+function dragEnd(event){
+    $( event.dragProxy ).remove();
+//    $(".dragThis").animate({
+//            top: event.offsetY,
+//            left: event.offsetX,
+//            opacity: 1
+//    })
+    $(".dragCover").remove();
+    $(".dragHelper").remove();
+    $("#dragClone").remove();
+}
+
+/*
+ * 
+ * @param {type} event
+ * @return {Boolean}
+ * When a user 
+ */
 function dropHelp(event){
     //console.log("Drop help");
     var windowURL = document.location.href;
@@ -2719,18 +2735,34 @@ function dropHelp(event){
     var data_array = data.split(",");
     var childArray = [];
     var childIDArray = [];
-    for(var l=0;l<data_array.lengh;l++){
+    var leafIncluded = false;
+    var selfTarget = false;
+    var targetCount = 0;
+    for(var l=0;l<data_array.length;l++){
         var data_range = data_array[l];
         var child = document.getElementById(data_range);
+        if(child.getAttribute("leaf") === "true"){
+            leafIncluded = true;
+            targetCount += 1;
+        }
+        else{
+            targetCount += parseInt($(child).find(".folioCount").children(".countInt").html()); 
+        }
+        if(target.id+"_tmp" == data_range || target.id == data_range){
+            selfTarget = true;
+        }
         if(child === null || child === undefined) {
-            childArray.push(child);
-            childIDArray.push(data_range.getAttribute("rangeid"));
+            
         } //prolly dont do this in the loop.
+        else{
+            childArray.push(child);
+            childIDArray.push(child.getAttribute("rangeid"));
+            
+        }
         if(l == data_array.length -1 ){
            childArray = $(childArray);
         }
     }
-    //var droppedClass = outer.find($("#"+data)).attr("class");
     var areaTakenFrom = outer.find($("#"+data_array[0])).parents(".rangeArrangementArea").attr("rangeID");
     var areaTakenFromDepth = parseInt(outer.find($("#"+data_array[0])).parents(".rangeArrangementArea").attr("depth"));
     
@@ -2756,51 +2788,55 @@ function dropHelp(event){
         return false;
     }
     if(targetClass.indexOf('notBucket') > -1){
-      if($(target).closest(".rangeArrangementArea").attr("depth") === "1" && $("#"+data).attr("leaf") === "true"){
+      if($(target).closest(".rangeArrangementArea").attr("depth") === "1" && leafIncluded){
           //cannot drop leaves into the top level structure. 
           alert("You cannot drop leaves into the top level");
           return false;
       }
-      childArray.css("display", "block");  
+      $.each(childArray, function(){
+          $(this).css("display", "block"); ;
+      });
     }
     else{
       $.each(childArray, function(){
           $(this).attr("id", $(this).attr("id"+"_tmp"));
+          $(this).css("display", "none");
       });
-      childArray.css("display", "none");
       if(targetClass.indexOf('unassigned') > -1){
           areaDroppedTo = "unassigned";
       }
     }
     var append = true;
-    if(target.id === data || target.id === data+"_tmp"){
-        $.each(childArray, function(){
-          $(this).attr("id", $(this).attr("id").replace("_tmp", ""));
-        });
-        childArray.css("display", "block");  
-        append = false;
-    }   
-    else if(areaDroppedTo == areaTakenFrom){//dont append to self or same section
+//    if(target.id === data || target.id === data+"_tmp"){
+//        $.each(childArray, function(){
+//          $(this).attr("id", $(this).attr("id").replace("_tmp", ""));
+//          $(this).css("display", "block");
+//        });
+//        append = false;
+//    }   
+    if(areaDroppedTo === areaTakenFrom){//dont append to self or same section
       if(target.className.indexOf("notBucket") > -1){
         append = false;
       }
     }
     else{
-      for (var i = 0; i < target.childNodes.length; i++) {
-        if(target.childNodes[i].id+"_tmp" == child.id || target.childNodes[i].id == child.id ) { //prevent dropping into same column or on self
+        if(selfTarget) { //prevent dropping into same column or on self
           append = false;
           $.each(childArray, function(){
             $(this).attr("id", $(this).attr("id").replace("_tmp", ""));
+            $(this).css("display", "block");
           });
-          childArray.css("display", "block");
         }    
-      } 
     }
 //    console.log("Append?");
 //    console.log(append);
     if(append){
         $.each(childArray, function(){
           $(this).attr("relation", relation);
+          $(this).attr("class", $(this).attr("class").replace(/\bparent\b/,''));
+          if(!$(this).hasClass("child")){
+              $(this).addClass("child");
+          }
         });
         $(target).append(childArray);
         //make the target flash
@@ -2836,14 +2872,9 @@ function dropHelp(event){
           moveAndUpdate(childIDArray, areaTakenFrom, toTarget, dropIntoBucket);
       }
       else{
+          populateMessage("Object moved!");
           //$("#"+data).remove();
-      }
-      $.each(childArray, function(){
-          $(this).attr("class", $(this).attr("class").replace(/\bparent\b/,''));
-          if(!$(this).hasClass("child")){
-              $(this).addClass("child");
-          }
-        });      
+      }      
     //There has been a change, reset the folio counts.  FIXME: Does not decrement with the area where the leaf was taken from, need to make this smarter.
      //There has been a change, reset the folio counts.  FIXME: Does not decrement with the area where the leaf was taken from, need to make this smarter.
          $.each($(".arrangeSection").not(".selectedSection"), function(){
@@ -2862,10 +2893,6 @@ function dropHelp(event){
        });
        
         if(areaDroppedToDepth < areaTakenFromDepth){
-            var targetCount = 1;
-            if($(child).attr("leaf")!=="true"){
-                targetCount = parseInt($(child).find(".folioCount").children(".countInt").html());
-            }
             $.each($(".selectedSection"), function(){
                 if(parseInt($(this).parents("div[depth]").attr("depth")) >= areaDroppedToDepth 
                 && parseInt($(this).parents("div[depth]").attr("depth")) < areaTakenFromDepth
@@ -2890,9 +2917,10 @@ function dropHelp(event){
       }
     }
     else{
-      event.preventDefault();
-      return false;
-    }    
+
+    }
+    event.stopPropagation();
+    //do not call dropEvent on other children being dropped.
 }
 
 function dropFlash($elem){
@@ -2918,7 +2946,7 @@ function moveAndUpdate(rangesMoved, rangeMovedFrom, rangeMovedTo, bucketBoolean)
         var rangeList = range.ranges;
         //console.log("original range list");
         //console.log(rangeList);
-        for(var y=0; y< rangesMoved.lenght; y++){
+        for(var y=0; y< rangesMoved.length; y++){
             var index = $.inArray(rangesMoved[y], rangeList);
             if(index > -1){
                 //console.log("range in range list, splicing out.");
@@ -2947,6 +2975,7 @@ function moveAndUpdate(rangesMoved, rangeMovedFrom, rangeMovedTo, bucketBoolean)
                 //console.log("Update the range moved to ranges with the new list");
                 var paramObj3 = {"@id" : rangeMovedTo, "ranges" : rangeList2};
                 var params3 = {"content" : JSON.stringify(paramObj3)};
+                populateMessage("object(s) moved!");
                 //update list where range being moved was droped
                 //updateInManifest("structures",paramObj3);
                 $.post(updateURL, params3, function(){
@@ -2990,13 +3019,13 @@ function gatherRangesForArrange(which, username){
         if(which !== 1){
             console.log("Please wait while we sync the server data to the manifest...");
             $(".mainBlockCover").show();
-            $("#syncNotice").show();
-            syncData(username, url, params, which);
+            $("#syncNotice_load").show();
+            syncData(username, url, params, which, true);
         }
     }
 }
 
-function syncData(username, url ,params, which){
+function syncData(username, url ,params, which, pageLoad){
     var url2 = "http://165.134.241.141/brokenBooks/getManifest";
     var params2 = {"username":username};
     $.post(url2, params2)
@@ -3013,7 +3042,7 @@ function syncData(username, url ,params, which){
             manifest = manifest_data[0]; //specifically manifest
             manifestID = manifest["@id"];
             $("#manURL").html(manifestID);
-            publish(); //sync everything at the beginning
+            publish(pageLoad); //sync everything at the beginning
         });
     });
     
@@ -3096,7 +3125,7 @@ function orderSeqFromStruct(){
 /* 
  * Set all the manifest level information to the manifest level object for the user
  */
-function publish(){
+function publish(pageLoad, redirect){
     console.log("publish pending...");
     $(".mainBlockCover").show();
     $("#syncNotice").show();
@@ -3115,7 +3144,19 @@ function publish(){
     .done(function(){
         console.log("publish succcess, data synced.");
         $("#syncNotice").hide();
-        $(".mainBlockCover").hide();
+        if(pageLoad){
+            $("#syncConfirm").hide();
+            $("#syncImg").hide();
+            $("#gotIT").show();
+        }
+        else{
+            $(".mainBlockCover").hide();
+        }
+        if(redirect!== undefined && redirect!== ""){
+            document.location.href=redirect;
+        }
+        $("#gotoMirador").removeAttr("disabled");
+        $("#publishBtn").attr("disabled", "disabled");
     })
     .fail(function(){
         console.log("publish fail, data not synced.");
@@ -3149,7 +3190,7 @@ function populateRangesToDOM(which){
         var dragAttribute = "id='drag_"+uniqueID+"_tmp' draggable='true' ondragstart='dragHelp(event);' ondragend='dragEnd(event);'";
         var dropAttribute = " ondragover='dragOverHelp(event);' ondrop='dropHelp(event);'";
         var canvases = rangeCollection[i].canvases;
-        var checkbox = "<input class='putInGroup' type='checkbox' />";
+        var checkbox = "<input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' />";
         var rightClick = "oncontextmenu='breakUpConfirm(event); return false;'";
         var lockStatusUp = rangeCollection[i].lockedup;
         var lockStatusDown = rangeCollection[i].lockeddown;
@@ -3170,7 +3211,7 @@ function populateRangesToDOM(which){
         if(which === 2){
             tag += " sortOrder";
             admin = "admin";
-            checkbox = "<input class='putInGroup' type='checkbox' />";
+            checkbox = "<input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' />";
             //dragAttribute = "id='drag_"+uniqueID+"_tmp' draggable='false' ondragstart='dragHelp(event);' ondragend='dragEnd(event);'";
             if(lockStatusDown === "false"){
                   lockit = "<div class='lockUp' onclick=\"lock('"+relation+"',event);\"> </div>";
@@ -3193,7 +3234,7 @@ function populateRangesToDOM(which){
         }
         else{
           isLeaf = false;
-          checkbox = "";
+          //checkbox = "";
         }
         if(isOrdered === "true"){
             tag += " ordered";
@@ -3246,8 +3287,8 @@ function populateRangesToDOM(which){
                     if(this["@id"] === thisRange){ //find the object by ID among the collection.  When you find it, gets its information.
                         var thisLabel = this.label;
                         var thisCanvases = this.canvases;
-                        var thisIsOrdered = this.isOrdered;
-                        var checkbox2 = "<input class='putInGroup' type='checkbox' />";
+                        var thisIsOrdered2 = this.isOrdered;
+                        var checkbox2 = "<input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' />";
                         var lockStatusUp2 = this.lockedup;
                         var lockStatusDown2 = this.lockeddown;
                         //dragAttribute = "id='drag_"+uniqueID+"_tmp' draggable='false' ondragstart='dragHelp(event);' ondragend='dragEnd(event);'";
@@ -3266,7 +3307,7 @@ function populateRangesToDOM(which){
                         }
                         else{
                           isLeaf2 = false;
-                          checkbox2 = "";
+                          //checkbox2 = "";
                           dropAttribute = " ondragover='dragOverHelp(event);' ondrop='dropHelp(event);'";
                         }
                         if(which == 1){
@@ -3277,7 +3318,7 @@ function populateRangesToDOM(which){
                         }
                         var embedRange = "";
                         
-                        embedRange = $("<div isOrdered='"+thisIsOrdered+"' lockedup='"+lockStatusUp+"' lockeddown='"+lockStatusDown+"'\n\
+                        embedRange = $("<div isOrdered='"+thisIsOrdered2+"' lockedup='"+lockStatusUp2+"' lockeddown='"+lockStatusDown2+"'\n\
                             "+dragAttribute+" "+dropAttribute+" "+rightClick+" onclick=\"toggleChildren($(this), '"+admin+"', event);\" class='arrangeSection "+tag2+"' leaf='"+isLeaf2+"' relation='"+relation+"' rangeID='"+this['@id']+"'><span>"+thisLabel+"</span> "+checkbox2+" "+lockit2+"</div>");
                         if($.inArray(this["@id"], existingRanges) == -1){
                             if(isLeaf2 && rangeCollection[i].parent !== undefined){ //we need to put this leaf into the unassigned area
@@ -4940,11 +4981,13 @@ function populateAnnoForms(){
 //    });
     var newTitleRequest = 
     $("<div style='display:block;' id='newGroupTitleArea' class='helPop'><div style='left: 32px;' class='popHdr'>Merge Checked Selection</div>\n\
-    <div style='height:100%;' class='helperContent demoContent demoHdrTxt'>\n\
-        <span class='newgroupLabel'>New Group Title</span><input id='newGroupTitle' type='text'/><div class='noTitleWarning'>You must supply a title to make a group.</div>\n\
+    <div style='height:100%;' class='popupContentWrapper'>\n\
+        <span class='newgroupLabel'>New Group Title</span>\n\
+        <input id='newGroupTitle' type='text'/>\n\
+        <div class='noTitleWarning'>You must supply a title to make a group.</div>\n\
     </div>\n\
-        <input style='position: absolute; right:87px;' onclick=\"makeAgroup($('#newGroupTitle').val());\" type='button' value='Submit'/>\n\
-        <input style='position: absolute; right:33px;' onclick=\"$('#newGroupTitleArea').remove();  $('.mainBlockCover').hide();\" type='button' value='Cancel'/>\n\
+        <input style='position:relative; top:12px; left:173px;' onclick=\"makeAgroup($('#newGroupTitle').val());\" type='button' value='Save'/>\n\
+        <input style='position:relative; top:12px; left:173px;' onclick=\"$('#newGroupTitleArea').remove();  $('.mainBlockCover').hide();\" type='button' value='Cancel'/>\n\
     </div>");
     $('.adminTrail').append(newTitleRequest);
     $(".mainBlockCover").show();
@@ -4993,7 +5036,7 @@ function populateAnnoForms(){
             var dragAttribute = "id='drag_"+uniqueID+"' draggable='true' ondragstart='dragHelp(event);' ondragend='dragEnd(event);'";
             var dropAttribute = " ondragover='dragOverHelp(event);' ondrop='dropHelp(event);'";
             var rightClick = "oncontextmenu='breakUpConfirm(event); return false;'";
-            var newGroup = $("<div rangeID='"+mockID+"' class='arrangeSection child sortOrder' "+dragAttribute+" "+dropAttribute+" "+rightClick+" leaf='false' onclick=\"toggleChildren($(this),'admin',event);\"><span>"+title+"</span><input class='putInGroup' type='checkbox' /></div>");
+            var newGroup = $("<div rangeID='"+mockID+"' class='arrangeSection child sortOrder' "+dragAttribute+" "+dropAttribute+" "+rightClick+" leaf='false' onclick=\"toggleChildren($(this),'admin',event);\"><span>"+title+"</span><input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' /></div>");
              $.each(childrenForGroup, function(){
               var newChild = $(this);
               if(newChild.hasClass("parent")){
@@ -5074,6 +5117,7 @@ function populateAnnoForms(){
                         var updateURL ="http://165.134.241.141/brokenBooks/updateRange";
                         var paramObj2 = {"@id" : areaForNewGroup.attr("rangeID"), "ranges" : rangeList};
                         var params3 = {"content" : JSON.stringify(paramObj2)};
+                        populateMessage("Grouping successful!");
                         //updateInManifest("structures",paramObj2);
                         $.post(updateURL, params3, function(){ //update the range who recieved the new group's range list in the db
                             //update the ranges within that are being grouped in the new group.
@@ -5152,6 +5196,7 @@ function populateAnnoForms(){
                                 }
                             });
                             cancelNewGroupForm();
+                            populateMessage("Grouping successful!");
                     }
                 });
             }
@@ -5785,6 +5830,9 @@ function populateAnnoForms(){
           alert("You cannot break an opened section.");
           return false;
       }
+      if(className.indexOf("lockUp") > -1 || className.indexOf("lockedUp")>-1 || className.indexOf("putInGroup") >-1){ //dont fire if they click a lock icon or checkbox
+          return false;
+      }
       if(tagName == "SPAN" || tagName == "INPUT" || className.indexOf("folioCount") > -1){
           var parent = "";
           if(className.indexOf("countInt") > -1){
@@ -5798,15 +5846,13 @@ function populateAnnoForms(){
       else{
           targetToBreak = event.target;
       }
-      
       var confirm = '';
-//      console.log("Check for lock before allowing break");
-//      console.log(targetToBreak.className);
-//      console.log(targetToBreak.parentNode.getAttribute("isOrdered"));
+      var highlight = false;
       if(targetToBreak.className.indexOf("ordered") > -1 || targetToBreak.getAttribute("isOrdered") === "true"){
           //console.log("Locked, dont break");
            confirm = $("<div class='breakConfirm'><div class='popHdr' style='position: relative; font-size: 14px; top:0px;  left:0px;'>locked!</div>\n\
-           <div class='demoContent'><input value='OK' type='button' onclick='$(this).parent().parent().remove()'/></div></div>");
+           <div class='breakContent'><input value='OK' type='button' onclick='$(this).parent().parent().remove()'/></div></div>");
+          highlight = true;
       }
       else{
           //console.log("breakable");
@@ -5816,13 +5862,14 @@ function populateAnnoForms(){
               question = 'delete?';
           }
             confirm= $("<div class='breakConfirm'><div class='popHdr' style='position: relative; font-size: 14px; top:0px;  left:0px;'>"+question+"</div>\n\
-            <div class='demoContent'>\n\
-            <input value='Yes' type='button' onclick=\"breakUp();\" /><input value='No' type='button' onclick='$(this).parent().parent().remove()'/>\n\
+            <div class='breakContent'>\n\
+            <input value='Yes' type='button' onclick=\"breakUp();\" />&nbsp;&nbsp;&nbsp;<input value='No' type='button' onclick='$(this).parent().parent().remove()'/>\n\
             </div>\n\
             </div>");
       }
       var x = event.pageX;
       var y = event.pageY;
+      if(highlight)highlighLocks(targetToBreak, "break");
       if($(".breakConfirm").length == 0){
         $('body').append(confirm);
         confirm.css({
@@ -5851,12 +5898,15 @@ function populateAnnoForms(){
             if(this["@id"] === rangeID2){
                 rangeCollection.splice(index,1);
                 updateManifestStructures();
+                populateMessage("Leaf deleted!");
                 return false;
             };
         });
         $.post(removeURL, params, function(){
             var deleteDepth = parseInt($(targetToBreak).parents(".rangeArrangementArea").attr("depth"));
             $(targetToBreak).remove();
+            populateMessage("Leaf deleted!");
+            
             //update the folio count since deleting the leaf removed the page.  
             //Need to go up the selectedSection latter and decrement the folio count that way.  The element inside the
             //section is not removed until collapsed, so this wont work.
@@ -5877,11 +5927,11 @@ function populateAnnoForms(){
                 var params3 = {"content" : JSON.stringify(paramObj3)}; 
                 $.post(removeURL, params3, function(){
                     var matches = 0;
-                    var length = manifestCanvases.length;
                     $.each(manifestCanvases, function(index){
                         if(this["@id"]===canvases[0]["@id"] || this["@id"]===canvases[1]["@id"]){
                             manifestCanvases.canvases.splice(index,1);
-                            if(matches === 2 || index === length){
+                            matches += 1;
+                            if(matches === 2){
                                 updateManifestSequence();
                                 return false;
                             }
@@ -5913,6 +5963,7 @@ function populateAnnoForms(){
         var params = {"content" : JSON.stringify(paramObj)}; 
         $.post(removeURL, params, function(){
             $(targetToBreak).remove();
+            populateMessage("Object deleted!");
         });
       }
       
@@ -6021,8 +6072,19 @@ function populateAnnoForms(){
        
   }
 
-  function newGroupForm(column){
+  function newGroupForm(column, lacuna){
       //all leaves arent always gathered, perhaps make sure they are here.
+      if(lacuna){
+          //find the selected area for this group and add a lacuna to the end of it (as the last Canvas)
+          if(column.find(".selectedSection").length == 0){
+              alert("You must select a section to add the lacuna to.");
+          }
+          else{
+              var label = $(".selectedSection").children("span").html();
+              alert("We will add a lacuna to "+label);
+          }
+          return false;
+      }
       $("#newGroupForm").show();
       $(".mainBlockCover").show();
       var columnDepth = parseInt(column.attr("depth"));
@@ -6063,7 +6125,7 @@ function populateAnnoForms(){
           var bucketCount = parseInt(bucket.find(".folioCount").find(".countInt").html());
           rangeID = parseInt(rangeID) + 1;
           var mockID= "http://www.example.org/iiif/LlangBrev/range/"+rangeID;
-          var newGroup = $("<div rangeID='"+mockID+"' leaf='false' class='arrangeSection child sortOrder' "+dragAttribute+" "+dropAttribute+" "+rightClick+" "+toggle1+" ><span>"+title+"</span><input class='putInGroup' type='checkbox' /></div>");
+          var newGroup = $("<div rangeID='"+mockID+"' leaf='false' class='arrangeSection child sortOrder' "+dragAttribute+" "+dropAttribute+" "+rightClick+" "+toggle1+" ><span>"+title+"</span><input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' /></div>");
           if(depth ===1){
             newGroup.removeClass("child").addClass("parent");
           };
@@ -6080,7 +6142,7 @@ function populateAnnoForms(){
                       uniqueID += 1;
                       dragAttribute = "id='drag_"+uniqueID+"' draggable='true' ondragstart='dragHelp(event);' ondragend='dragEnd(event);'";
                       var lockit = "<div class='lockUp' onclick=\"lock('"+leafID+"',event);\"> </div>";
-                      var newLeaf = $("<div rangeID='"+leafID+"' leaf='true' class='arrangeSection child sortOrder' "+dragAttribute+" "+rightClick+" "+toggle1+"><span>"+leafLabel+"</span><input class='putInGroup' type='checkbox' />"+lockit+" "+existing+"</div>");
+                      var newLeaf = $("<div rangeID='"+leafID+"' leaf='true' class='arrangeSection child sortOrder' "+dragAttribute+" "+rightClick+" "+toggle1+"><span>"+leafLabel+"</span><input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' />"+lockit+" "+existing+"</div>");
                       newGroup.append(newLeaf);
                       if(bucket.children(".arrangeSection[rangeid='"+leafID+"']").length > 0){
                             bucket.children(".arrangeSection[rangeid='"+leafID+"']").remove();
@@ -6101,6 +6163,7 @@ function populateAnnoForms(){
                   $(".adminTrail").find("div[depth='"+depth+"']").children(".notBucket").children("div:first").remove();
                 }
                 cancelNewGroupForm();
+                populateMessage("New group added!");
           }
           else{
               var rangeForNewGroup = $("div[depth='"+depth+"']").attr("rangeid");
@@ -6164,6 +6227,7 @@ function populateAnnoForms(){
                 if($("div[depth='1']").find(".unassigned").attr("class").indexOf("selectedSection") > -1){
                     $("div[depth='1']").find(".unassigned").click();
                 }
+                populateMessage("New group added!");
                 $.each(children, function(){
                     //TODO: Could do a batch update here.
                     var updateURL ="http://165.134.241.141/brokenBooks/updateRange";
@@ -6573,6 +6637,7 @@ function selectInTree(child){
  */
 function lock(rangeURI, event){
     var updateAnnoURL = "http://165.134.241.141/brokenBooks/updateRange";
+    console.log("LOCK");
     if($("div[depth='1']").find(".unassigned").attr("class").indexOf("selectedSection") > -1){
         //cannot lock leaves in the bucket
         alert("cannot lock leaves in the bucket.  Assign to a section first.");
@@ -6589,22 +6654,28 @@ function lock(rangeURI, event){
     var params2 = {"content": JSON.stringify(leafToLockWith_properties)};
     
     //update these properties
-    $.post(updateAnnoURL, params1)
-    .done(function(){
-        $.post(updateAnnoURL, params2)
+    if(leafToLockWith.hasClass("arrangeSection") && leafToLockWith.attr("lockedup") === "false"){
+        $.post(updateAnnoURL, params1)
         .done(function(){
-            paginateLocks("locked", leafToLock, leafToLockWith, lockItem);
+            $.post(updateAnnoURL, params2)
+            .done(function(){
+                paginateLocks("locked", leafToLock, leafToLockWith, lockItem);
+            })
+            .fail(function(){
+
+            });
         })
         .fail(function(){
-            
+
         });
-    })
-    .fail(function(){
-        
-    });
+    }
+    else{
+        alert("There is no unlocked object immediately following this object, so a lock cannot be performed");
+    }
 }
 
 function unlock(rangeURI, event){
+    console.log("UNLOCK");
     var updateAnnoURL = "http://165.134.241.141/brokenBooks/updateRange";
     var leafToLock = $(event.target).parent();
     var leafToLockWith = $(event.target).parent().next();
@@ -6651,7 +6722,7 @@ function paginateLocks(action, range, rangeAfter, lockItem){
             rangeAfter.attr("isOrdered", "false");
         }
         var id1 = range.attr("rangeid");
-        var newClick = "onclick='lock(\""+id1+"\",event)'";
+        var newClick = "lock('"+id1+"',event);";
         lockItem.removeClass("lockedUp").addClass("lockUp");
         lockItem.attr("onclick", newClick);
     }
@@ -6661,7 +6732,7 @@ function paginateLocks(action, range, rangeAfter, lockItem){
         rangeAfter.attr("lockedup", "true");
         rangeAfter.attr("isOrdered", "true");        
         var id1 = range.attr("rangeid");
-        var newClick = "onclick='unlock(\""+id1+"\",event)'";
+        var newClick = "unlock('"+id1+"',event);";
         lockItem.removeClass("lockUp").addClass("lockedUp");
         lockItem.attr("onclick", newClick);
     }
@@ -6708,6 +6779,79 @@ function detectWho(){
         who = "broken_books_debra";
     }
     return who;
+}
+
+function syncConfirmed(){
+    $(".mainBlockCover").hide();
+    $("#syncNotice_load").hide();
+}
+
+function populateMessage(msg){
+    $("#actionMsg").html(msg).show();
+    $("#actionMsg").fadeOut(3500);
+    $("#gotoMirador").attr("disabled", "disabled");
+    $("#publishBtn").removeAttr("disabled");
+    
+}
+
+function highlighLocks(where, why){
+    var lockedUp = false;
+    var lockedDown = false;
+    console.log("highlight locks");
+    console.log($(where).attr("lockedup"), $(where).attr("lockeddown"));
+    if(why === "merge"){
+        if($(where).attr("lockedup") === "true")lockedUp=true;
+        if($(where).attr("lockeddown") === "true")lockedDown=true;
+        if(lockedUp || lockedDown){
+            $(where).find(".putInGroup").attr("checked", false);
+            if(lockedUp){
+                $(where).prev().find(".lockedUp").css("background-color","red");
+            }
+            else if(lockedDown){
+                $(where).find(".lockedUp").css("background-color","red");
+            }
+            
+            if(lockedUp){
+                window.setTimeout(function(){
+                    $(where).prev().find(".lockedUp").css("background-color","white");
+                }, 2000);
+
+            }
+            else if(lockedDown){
+                window.setTimeout(function(){
+                    $(where).find(".lockedUp").css("background-color","white");
+                }, 2000);
+
+            }
+            //alert("You cannot merge locked objects.  If you would like them to be in their own sections, create an empty section then drag and drop the objects into the new empty section. The locked object has been unchecked.");
+        }
+    }
+    else if(why === "break"){
+        if($(where).attr("lockedup") === "true")lockedUp=true;
+        if($(where).attr("lockeddown") === "true")lockedDown=true;
+        if(lockedUp || lockedDown){
+            $(where).find(".putInGroup").attr("checked", false);
+            if(lockedUp){
+                $(where).prev().find(".lockedUp").css("background-color","red");
+            }
+            else if(lockedDown){
+                $(where).find(".lockedUp").css("background-color","red");
+            }
+
+            if(lockedUp){
+                window.setTimeout(function(){
+                    $(where).prev().find(".lockedUp").css("background-color","white");
+                }, 2000);
+
+            }
+            else if(lockedDown){
+                window.setTimeout(function(){
+                    $(where).find(".lockedUp").css("background-color","white");
+                }, 2000);
+
+            }
+        }
+    }
 }
 
 
