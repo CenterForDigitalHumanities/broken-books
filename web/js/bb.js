@@ -2393,7 +2393,7 @@ function toggleChildren(parentRange, admin, event){
   var actualDepth = parseInt(outer.find(".rangeArrangementArea").length);
   var sortOrder = "";
   var extraButtons = '<div class="columnActions">\n\
-                    <input class="makeGroup" value="merge" type="button" onclick="askForNewTitle($(this).parent());"/>\n\
+                    <input class="makeGroup" value="merge" type="button" onclick="askForNewTitle($(this).parent().parent());"/>\n\
                     <input class="addGroup" value="add" type="button" onclick="newGroupForm($(this).parent().parent(), false);"/>\n\
                     <input class="addLacuna" value="lacuna" type="button" onclick="newGroupForm($(this).parent().parent(), true);"/>\n\
                     <input class="makeSortable" value="sort" type="button" onclick="makeSortable($(this).parent().parent());"/>\n\
@@ -5021,7 +5021,7 @@ function populateAnnoForms(){
               }
               leafCount += addLeaves;
           });
-          
+          console.log("counted leaves");
           var uniqueID = ($(".arrangeSection").length * 10) + 1;
           var depthToCheck = parseInt(theArea.attr("depth")) - 1;
           var areaForNewGroup = "";
@@ -5031,6 +5031,7 @@ function populateAnnoForms(){
           else{
                 areaForNewGroup = theArea;
           }
+          console.log("got area for new group");
             rangeID = parseInt(rangeID) + 1;
             var mockID = "http://www.example.org/iiif/LlangBrev/range/"+rangeID;
             var dragAttribute = "id='drag_"+uniqueID+"' draggable='true' ondragstart='dragHelp(event);' ondragend='dragEnd(event);'";
@@ -5045,6 +5046,7 @@ function populateAnnoForms(){
               }
               newGroup.append(newChild);
             });
+            console.log("pu children in group");
             var leafCountHTML = $("<span class='folioCount'><span class='countInt'>"+leafCount+"</span><img class='pageIcon' src='http://165.134.241.141/brokenBooks/images/b_page.png'/></span>");
             newGroup.append(leafCountHTML);
             var depth = theArea.attr("depth");
@@ -5062,6 +5064,7 @@ function populateAnnoForms(){
             }
             
             if(windowurl.indexOf("demo=1") === -1){
+                console.log("not demo");
                 $.each(rangeCollection, function(){
                     if(this["@id"] === areaForNewGroup.attr("rangeID")){
                     var rangeObj = this;
@@ -5098,6 +5101,7 @@ function populateAnnoForms(){
                     }
                     $.post(saveURL, params2, function(data){ //save the new group
                         data = JSON.parse(data);
+                        console.log("saved new group to server");
                         var backupArray = new Array();
                         var newGroupID = data["@id"];
                         var rangeObj2 = JSON.parse(params2.content);
@@ -6725,6 +6729,7 @@ function paginateLocks(action, range, rangeAfter, lockItem){
         var newClick = "lock('"+id1+"',event);";
         lockItem.removeClass("lockedUp").addClass("lockUp");
         lockItem.attr("onclick", newClick);
+        populateMessage("Object unlocked!");
     }
     else if(action === "locked"){
         range.attr("lockeddown", "true");
@@ -6735,6 +6740,7 @@ function paginateLocks(action, range, rangeAfter, lockItem){
         var newClick = "unlock('"+id1+"',event);";
         lockItem.removeClass("lockUp").addClass("lockedUp");
         lockItem.attr("onclick", newClick);
+        populateMessage("Object locked!");
     }
     else{
         console.warn("unknown lock action");

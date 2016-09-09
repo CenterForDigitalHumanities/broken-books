@@ -172,6 +172,9 @@ and open the template in the editor.
                 color: white;
                 font-weight: bold;
                 z-index: 10;
+                padding: 6px;
+                text-align: center;
+                line-height: 24px;
             }
 
 
@@ -189,10 +192,9 @@ and open the template in the editor.
         </div>
         <img style='left: 45px; top: -30px;' onclick="$('#mainBlockHelp').show(); $('.mainBlockCover').show();"
         class="helperIcon" src="http://165.134.241.141/brokenBooks/images/redInfo1.png" />
-        <input id="publishBtn" class="helperIcon" value="Save Manifest" onclick="publish();"/>
+        <input disabled id="publishBtn" class="helperIcon" value="Save Manifest" onclick="publish();"/>
         <input id="gotoMirador" class="helperIcon" onclick="" value="View In Mirador" />
         <span class='sortTitle'>The Llangattock Breviary Structure</span>
-<!--        <div class="publishTitle"> <input id="publishBtn" type="button" value="Save Manifest" onclick="publish();"/> </div>-->
         <div class="mainBlock">
             <div class="mainBlockCover"></div>
             <div class="arrangeTrail adminTrail">
@@ -221,7 +223,9 @@ and open the template in the editor.
                     <a style='margin-left: 10px;' href='#editing'>Editing Sections</a><br>
                     <a style='margin-left: 10px;' href='#arranging'>Arranging Content</a><br>
                     <a style='margin-left: 10px;' href='#metadata'>Editing Metadata</a><br>
-                    <a style='margin-left: 10px;' href='#viewing'>Viewing The Leaves</a><br><br>
+                    <a style='margin-left: 10px;' href='#viewing'>Viewing The Leaves</a><br>
+                    <a style='margin-left: 10px;' href='#saving'>Saving The Manifest</a><br>
+                    <a style='margin-left: 10px;' href='#viewing'>Viewing The Manifest</a><br><br>
                     
                     <h3>Manifest URL: </h3> 
                     <p id="manURL"></p>
@@ -348,7 +352,19 @@ and open the template in the editor.
                         2. Click on the “eye” icon next to the image in the metadata window. This will open a popup of the images at a larger 
                         resolution. Clicking on the image itself reveals the url for that image.
 
-                    </p>
+                    </p><br>
+                    <h4 id='saving'>Saving The Manifest</h4>
+                    <p>
+                        To save your manifest, click the Save Manifest button.<br>
+                        Note: If the button is inactive, this means you have not made any changes.  After you make a change, the button
+                        will become active again.
+                    </p><br>
+                    <h4 id='viewing'>Viewing The Manifest</h4>
+                    <p>
+                        You can view your manifest in Mirador.  To do this, click the View in Mirador button.<br>
+                        Note: If the button is inactive, this means you have made changes.  These changes must be saved before you
+                        can view your manifest in Mirador, or what you see in Mirador may not be what you expect.  
+                    </p><br>
                     <input type="button" onclick="$('#mainBlockHelp').hide(); $('.mainBlockCover').hide();" value="Close" />
                 </div>
             </div>
