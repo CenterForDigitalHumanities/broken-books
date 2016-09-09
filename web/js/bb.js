@@ -5037,6 +5037,7 @@ function populateAnnoForms(){
             var dragAttribute = "id='drag_"+uniqueID+"' draggable='true' ondragstart='dragHelp(event);' ondragend='dragEnd(event);'";
             var dropAttribute = " ondragover='dragOverHelp(event);' ondrop='dropHelp(event);'";
             var rightClick = "oncontextmenu='breakUpConfirm(event); return false;'";
+            
             var newGroup = $("<div rangeID='"+mockID+"' class='arrangeSection child sortOrder' "+dragAttribute+" "+dropAttribute+" "+rightClick+" leaf='false' onclick=\"toggleChildren($(this),'admin',event);\"><span>"+title+"</span><input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' /></div>");
              $.each(childrenForGroup, function(){
               var newChild = $(this);
@@ -5104,6 +5105,8 @@ function populateAnnoForms(){
                         console.log("saved new group to server");
                         var backupArray = new Array();
                         var newGroupID = data["@id"];
+                        var lock = "<div class='lockUp' onclick=\"lock('"+newGroupID+"',event);\"> </div>";
+                        newGroup.append(lock);
                         var rangeObj2 = JSON.parse(params2.content);
                         rangeObj2["@id"] = newGroupID;
                         rangeCollection.push(rangeObj2);
@@ -6209,6 +6212,8 @@ function populateAnnoForms(){
         $.post(saveURL, params2, function(data){ //save the new group
             data = JSON.parse(data);
             var newGroupID = data["@id"];
+            var lock = "<div class='lockUp' onclick=\"lock('"+newGroupID+"',event);\"> </div>";
+            $newGroup.append(lock);
             newRangeObject["@id"] = newGroupID;
             //manifest.structures.push(newRangeObject);
             rangeCollection.push(newRangeObject);
