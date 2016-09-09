@@ -5038,7 +5038,9 @@ function populateAnnoForms(){
             var dropAttribute = " ondragover='dragOverHelp(event);' ondrop='dropHelp(event);'";
             var rightClick = "oncontextmenu='breakUpConfirm(event); return false;'";
             
-            var newGroup = $("<div rangeID='"+mockID+"' class='arrangeSection child sortOrder' "+dragAttribute+" "+dropAttribute+" "+rightClick+" leaf='false' onclick=\"toggleChildren($(this),'admin',event);\"><span>"+title+"</span><input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' /></div>");
+            var newGroup = $("<div rangeID='"+mockID+"' class='arrangeSection child sortOrder' "+dragAttribute+" "+dropAttribute+" "+rightClick+" leaf='false' \n\
+            lockedup='false' lockeddown='false' onclick=\"toggleChildren($(this),'admin',event);\"><span>"+title+"</span>\n\
+            <input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' /></div>");
              $.each(childrenForGroup, function(){
               var newChild = $(this);
               if(newChild.hasClass("parent")){
@@ -5105,7 +5107,7 @@ function populateAnnoForms(){
                         console.log("saved new group to server");
                         var backupArray = new Array();
                         var newGroupID = data["@id"];
-                        var lock = "<div class='lockUp' onclick=\"lock('"+newGroupID+"',event);\"> </div>";
+                        var lock = $("<div class='lockUp' onclick=\"lock('"+newGroupID+"',event);\"> </div>");
                         newGroup.append(lock);
                         var rangeObj2 = JSON.parse(params2.content);
                         rangeObj2["@id"] = newGroupID;
@@ -5547,9 +5549,9 @@ function populateAnnoForms(){
                     "forProject": forProject,
                     "within" : "root",
                     "otherContent" : [],
-                    "lockedup" : "",
-                    "lockeddown": "",
-                    "isOrdered" : ""
+                    "lockedup" : "false",
+                    "lockeddown": "false",
+                    "isOrdered" : "false"
                     };
                     currentLeaf = "http://www.example.org/iiif/LlangBrev/range/"+rangeID; //local
                     createNewRange(leafRangeObject, 'currentLeaf', "", "", "");
@@ -5682,9 +5684,9 @@ function populateAnnoForms(){
                             "forProject": forProject,
                             "within" : "bucket", //dont want these to appear until placed
                             "otherContent" : [],
-                            "lockedup" : "",
-                            "lockeddown": "",
-                            "isOrdered" : ""
+                            "lockedup" : "false",
+                            "lockeddown": "false",
+                            "isOrdered" : "false"
                             };
                             currentLeaf = "http://www.example.org/iiif/LlangBrev/range/"+rangeID; //local
                             createNewRange(leafRangeObject, 'currentLeaf', "", "", "");
@@ -6132,7 +6134,8 @@ function populateAnnoForms(){
           var bucketCount = parseInt(bucket.find(".folioCount").find(".countInt").html());
           rangeID = parseInt(rangeID) + 1;
           var mockID= "http://www.example.org/iiif/LlangBrev/range/"+rangeID;
-          var newGroup = $("<div rangeID='"+mockID+"' leaf='false' class='arrangeSection child sortOrder' "+dragAttribute+" "+dropAttribute+" "+rightClick+" "+toggle1+" ><span>"+title+"</span><input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' /></div>");
+          var newGroup = $("<div rangeID='"+mockID+"' leaf='false' class='arrangeSection child sortOrder' lockedup='false' lockeddown='false'\n\
+          "+dragAttribute+" "+dropAttribute+" "+rightClick+" "+toggle1+" ><span>"+title+"</span><input onchange='highlighLocks($(this).parent(), \"merge\");' class='putInGroup' type='checkbox' /></div>");
           if(depth ===1){
             newGroup.removeClass("child").addClass("parent");
           };
@@ -6199,9 +6202,9 @@ function populateAnnoForms(){
             "within": range,
             "forProject" : forProject,
             "isReferencedBy":manifestID,
-            "lockedup" : "",
-            "lockeddown": "",
-            "isOrdered" : ""
+            "lockedup" : "false",
+            "lockeddown": "false",
+            "isOrdered" : "false"
         };
     $.post(getURL, params, function(data){ //get list of ranges currently in parent receiving grouping
         data= JSON.parse(data);
@@ -6212,7 +6215,7 @@ function populateAnnoForms(){
         $.post(saveURL, params2, function(data){ //save the new group
             data = JSON.parse(data);
             var newGroupID = data["@id"];
-            var lock = "<div class='lockUp' onclick=\"lock('"+newGroupID+"',event);\"> </div>";
+            var lock = $("<div class='lockUp' onclick=\"lock('"+newGroupID+"',event);\"> </div>");
             $newGroup.append(lock);
             newRangeObject["@id"] = newGroupID;
             //manifest.structures.push(newRangeObject);
@@ -6798,6 +6801,7 @@ function syncConfirmed(){
 }
 
 function populateMessage(msg){
+    $("#actionMsg").hide();
     $("#actionMsg").html(msg).show();
     $("#actionMsg").fadeOut(3500);
     $("#gotoMirador").attr("disabled", "disabled");
