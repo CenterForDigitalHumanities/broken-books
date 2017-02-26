@@ -6783,14 +6783,14 @@ function detectWho(){
     if(windowURL.indexOf("LFD") > -1){
         who = "broken_books_lisa";
     }
-    else if(windowURL.indexOf("RC") > -1){
-        who = "broken_books_ray";
+    else if(windowURL.indexOf("KW") > -1){
+        who = "broken_books_karen";
     }
-    else if (windowURL.indexOf("RC") > -1){
-        who = "broken_books_ray";
+    else if (windowURL.indexOf("DC") > -1){
+        who = "broken_books_debra";
     }
     else{ //TODO: something else maybe...sandbox it?
-        who = "broken_books_debra";
+        who = "broken_books_unknown";
     }
     return who;
 }

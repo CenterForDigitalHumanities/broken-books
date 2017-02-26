@@ -1202,12 +1202,12 @@ and open the template in the editor.
             
             }
             #gotoMirador:disabled, #publishBtn:disabled{
-                background-color: gray;
+                background-color: gray !important;
             }
             #gotoMirador{
                 padding: 3px 0px;
                 display: inline-block;
-                background-color: #791C2D !important;
+                background-color: #791C2D;
                 width: auto;
                 font-size: 16px;
                 font-weight: bold;
@@ -1229,7 +1229,7 @@ and open the template in the editor.
             #publishBtn{
                 padding: 3px 0px;
                 display: block;
-                background-color: #791C2D !important;
+                background-color: #791C2D;
                 width: auto;
                 font-size: 16px;
                 font-weight: bold;

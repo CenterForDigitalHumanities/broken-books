@@ -70,17 +70,32 @@ public class GetManifestServlet extends HttpServlet {
             a_metadata.add(metadata2);
             a_metadata.add(metadata3);
         }
-        else if(username.equals("ray")){
-            ranges = getAnnoByProperties("{\"@type\":\"sc:Range\",\"forProject\":\"broken_books_ray\"}");
+        else if(username.equals("karen")){
+            ranges = getAnnoByProperties("{\"@type\":\"sc:Range\",\"forProject\":\"broken_books_karen\"}");
             JSONObject metadata1 = new JSONObject();
             JSONObject metadata2 = new JSONObject();
             JSONObject metadata3 = new JSONObject();
             metadata1.element("label", "Title");
-            metadata1.element("value", "Ray's Recontruction Project");
+            metadata1.element("value", "Karen's Recontruction Project");
             metadata2.element("label", "Created By");
-            metadata2.element("value", "Ray Clemens");
+            metadata2.element("value", "Karen Winslow");
             metadata3.element("label", "Anchor Object");
-            metadata3.element("value", "http://ds.lib.berkeley.edu/BeineckeMS401_47");
+            metadata3.element("value", "http://brokenbooks.org");
+            a_metadata.add(metadata1);
+            a_metadata.add(metadata2);
+            a_metadata.add(metadata3);
+        }
+        else { //if(username.equals("UNKNOWN"))
+            //ranges are empty
+            JSONObject metadata1 = new JSONObject();
+            JSONObject metadata2 = new JSONObject();
+            JSONObject metadata3 = new JSONObject();
+            metadata1.element("label", "Title");
+            metadata1.element("value", "This is an Unknown project");
+            metadata2.element("label", "Created By");
+            metadata2.element("value", "Unknown");
+            metadata3.element("label", "Anchor Object");
+            metadata3.element("value", "http://brokenbooks.org");
             a_metadata.add(metadata1);
             a_metadata.add(metadata2);
             a_metadata.add(metadata3);
@@ -120,10 +135,14 @@ public class GetManifestServlet extends HttpServlet {
             jo_sequence.element("label", "Beauvais Missal Canvases");
             rv.element("label", "Beauvais Missal");
         }
-        else if (username.equals("ray")){
-            canvases = getAnnoByProperties("{\"@type\":\"sc:Canvas\",\"forProject\":\"broken_books_ray\"}");
-            jo_sequence.element("label", "Ray's Recontruction Canvases");
-            rv.element("label", "Ray's Recontruction");
+        else if (username.equals("karen")){
+            canvases = getAnnoByProperties("{\"@type\":\"sc:Canvas\",\"forProject\":\"broken_books_karen\"}");
+            jo_sequence.element("label", "Karen's Recontruction Canvases");
+            rv.element("label", "Karen's Recontruction");
+        }
+        else{
+            jo_sequence.element("label", "Unknown Canvases");
+            rv.element("label", "Unknown Recontruction");
         }
         if(null != canvases && "" != canvases){
             ja_canvases  = JSONArray.fromObject(canvases);

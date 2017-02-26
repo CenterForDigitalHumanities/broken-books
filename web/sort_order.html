@@ -545,10 +545,10 @@ and open the template in the editor.
                 $(".sortTitle").html("The Llangattock Breviary Structure");
                 usr="debra";
             }
-            else if(windowURL.indexOf("RC") > -1){
-                $("#gotoMirador").attr("onclick", "publish(false,'http://165.134.241.141/brokenBooks/getManifest.html?RC');");
-                $(".sortTitle").html("Ray's Project Structure");
-                usr="ray";
+            else if(windowURL.indexOf("KW") > -1){
+                $("#gotoMirador").attr("onclick", "publish(false,'http://165.134.241.141/brokenBooks/getManifest.html?KW');");
+                $(".sortTitle").html("Karen's Project Structure");
+                usr="karen";
             }
             else if(windowURL.indexOf("demo=1")>-1){
                 $("#gotoMirador").hide();
@@ -556,8 +556,8 @@ and open the template in the editor.
             }
             else{
                 //Debra should not be the default user, I think this is fixed in the projAndUser branch.
-                $("#gotoMirador").attr("onclick", "publish(false,'http://165.134.241.141/brokenBooks/getManifest.html?DTC');");
-                usr="debra";
+                $("#gotoMirador").attr("onclick", "publish(false,'http://165.134.241.141/brokenBooks/getManifest.html?UNKNOWN');");
+                usr="unknown";
             }
             if(windowURL.indexOf("home.html") < 0){
                 $(".leafPopover").load("../brokenBooks/leafPopover.html", function(){
