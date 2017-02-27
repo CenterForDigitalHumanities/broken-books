@@ -40,7 +40,7 @@ public class GetManifestServlet extends HttpServlet {
         username = request.getParameter("username");
         String ranges = "";
         JSONArray a_metadata = new JSONArray();
-        if(null == username || username.equals("debra")){
+        if(username.equals("debra")){
             ranges = getAnnoByProperties("{\"@type\":\"sc:Range\",\"forProject\":\"broken_books_debra\"}");
             JSONObject metadata1 = new JSONObject();
             JSONObject metadata2 = new JSONObject();
@@ -144,6 +144,8 @@ public class GetManifestServlet extends HttpServlet {
             jo_sequence.element("label", "Unknown Canvases");
             rv.element("label", "Unknown Recontruction");
         }
+        System.out.println("Canvases are what?");
+        System.out.println(canvases);
         if(null != canvases && "" != canvases){
             ja_canvases  = JSONArray.fromObject(canvases);
             jo_sequence.element("canvases", ja_canvases);
@@ -151,6 +153,7 @@ public class GetManifestServlet extends HttpServlet {
             ja_canvases = new JSONArray();
             jo_sequence.element("canvases", ja_canvases);
         }
+
         ja_sequences.add(jo_sequence);
         rv.element("@id", url);
         rv.element("@context", context);
