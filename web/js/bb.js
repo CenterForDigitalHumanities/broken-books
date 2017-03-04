@@ -4881,14 +4881,17 @@ function populateAnnoForms(){
                             //list.append("<li><span class='formLabel'>"+newLabel+" </span> "+value+"<span annoServerID='"+data["@id"]+"' class='removeInfo'> X </span></li>");
                     }
                     var forProject = detectWho();
-                    if(forProject === "broken_books_ray"){
-                        who = "paggr_ray";
+                    if(forProject === "broken_books_karen"){
+                        who = "paggr_karen";
                     }
                     else if (forProject === "broken_books_lisa"){
                         who="paggr_lisa";
                     }
+                    else if (forProject === "broken_books_debra"){
+                        who="paggr_debra";
+                    }
                     else{
-                        who = "paggr_debra";
+                        who = "paggr_unknown";
                     }
                     annoListID = parseInt(annoListID) + 1;
                     var newRangeAnnoList = {
@@ -4925,14 +4928,17 @@ function populateAnnoForms(){
                                 //list.append("<li><span class='formLabel'>"+newLabel+" </span> "+value+"<span annoServerID='"+data["@id"]+"' class='removeInfo'> X </span></li>");
                         }
                     var forProject = detectWho();
-                    if(forProject === "broken_books_ray"){
-                        who = "paggr_ray";
+                    if(forProject === "broken_books_karen"){
+                        who = "paggr_karen";
                     }
                     else if(forProject === "broken_books_lisa"){
                         who="paggr_lisa";
                     }
-                    else{
+                    else if(forProject === "broken_books_debra"){
                         who="paggr_debra";
+                    }
+                    else{
+                        who="paggr_unknown";
                     }
                     var newRangeAnnoList = {
                         "@id":"http://www.example.org/iiif/LlangBrev/annoList/"+annoListID, 
@@ -6786,7 +6792,7 @@ function detectWho(){
     else if(windowURL.indexOf("KW") > -1){
         who = "broken_books_karen";
     }
-    else if (windowURL.indexOf("DC") > -1){
+    else if (windowURL.indexOf("DTC") > -1){
         who = "broken_books_debra";
     }
     else{ //TODO: something else maybe...sandbox it?
