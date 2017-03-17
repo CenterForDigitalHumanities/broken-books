@@ -3981,13 +3981,15 @@ function populateAnnoForms(){
             //console.log("show save cover");
             $("#saveCover").show();
         }
-        var uriToSave = thisFolio; //alpha URI, beta URI, or leaf URI
-        var canvasURI = uriToSave;
-        context(canvasURI, flag, canvas);
+        if(canvas === "leaf" && thisFolio === "leaf"){ //user hit submit while leaf piece was selected.
+            thisFolio = currentLeafServerID;
+        }
+        var canvasURI = thisFolio;
+        context(flag, canvasURI, canvas);
 
     }
     
-    function content(canvasURI, flag, canvas){
+    function content(flag, canvasURI, canvas){
         //console.log("content");
         var uriToSave = canvasURI;
         for(var i=0; i<$(".contentFormEntry").length; i++){
@@ -4064,13 +4066,13 @@ function populateAnnoForms(){
             }
 
             if(i===$(".contentFormEntry").length-1){
-                notes(canvasURI, flag, canvas); //bulk
+                notes(flag, canvasURI, canvas); //bulk
             }
         }
     }
         //Go through each content piece, grab its value and if applicable make it an annotation or a range.
         
-        function context(canvasURI, flag, canvas){
+        function context(flag, canvasURI, canvas){
             //console.log("context");
             var uriToSave = canvasURI;
             for(var j = 0; j<$(".contextFormEntry").length; j++){
@@ -4117,12 +4119,12 @@ function populateAnnoForms(){
                 }       
                 
                 if(j===$(".contextFormEntry").length-1){
-                    carrier(canvasURI, flag, canvas);
+                    carrier(flag, canvasURI, canvas);
                 }
             }
         }
         
-        function carrier(canvasURI, flag, canvas){
+        function carrier(flag, canvasURI, canvas){
             //console.log("carrier");
             var uriToSave = canvasURI;
             for(var k = 0; k<$(".carrierFormEntry").length; k++){
@@ -4298,12 +4300,12 @@ function populateAnnoForms(){
                 }   
               
               if(k===$(".carrierFormEntry").length-1){
-                  content(canvasURI, flag, canvas);
+                  content(flag, canvasURI, canvas);
               }
           }  
     }
     
-    function notes(canvasURI, flag, canvas){
+    function notes(flag, canvasURI, canvas){
         //console.log("notes");
         var uriToSave = canvasURI;
         var canvasNotes = $("#notes").val();
@@ -4498,6 +4500,7 @@ function populateAnnoForms(){
                                     }
                                 });
                              }//local
+                             console.log("Should be hiding...1");
                              $("#saveCover").hide();
                              //console.log("Flag must be true to populate anno forms: "+flag);
                              if(flag){
@@ -5542,7 +5545,7 @@ function populateAnnoForms(){
                 var leafRangeObject = {
                     "@id" : "http://www.example.org/iiif/LlangBrev/range/"+rangeID,
                     "@type":"sc:Range",
-                    "label":"New Page" ,
+                    "label":"Manifest Page" ,
                     "canvases" : [
                       //newCanvas1["@id"], //local
                       //newCanvas2["@id"] //local
@@ -5677,7 +5680,7 @@ function populateAnnoForms(){
                         var leafRangeObject = {
                             "@id" : "http://www.example.org/iiif/LlangBrev/range/"+rangeID,
                             "@type":"sc:Range",
-                            "label":"New Page" ,
+                            "label":"Manifest Page" ,
                             "canvases" : [
                               //newCanvas1["@id"], //local
                               //newCanvas2["@id"] //local
