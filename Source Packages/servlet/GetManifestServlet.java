@@ -144,8 +144,8 @@ public class GetManifestServlet extends HttpServlet {
             jo_sequence.element("label", "Unknown Canvases");
             rv.element("label", "Unknown Recontruction");
         }
-        System.out.println("Canvases are what?");
-        System.out.println(canvases);
+        //System.out.println("Canvases are what?");
+        //System.out.println(canvases);
         if(null != canvases && "" != canvases){
             ja_canvases  = JSONArray.fromObject(canvases);
             jo_sequence.element("canvases", ja_canvases);

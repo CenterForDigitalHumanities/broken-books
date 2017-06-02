@@ -3065,6 +3065,7 @@ function orderSeqFromStruct(){
     function pushToOrderedSequence(canvas_uri, ordered_canvases){
         $.each(manifestCanvases,function(){
             if(this["@id"] === canvas_uri){
+                delete this["_id"];
                 canvases.push(this);
                 return false;
             }
@@ -3076,6 +3077,7 @@ function orderSeqFromStruct(){
         for(var i=0; i<rangeList.length; i++){
             if(rangeList[i].within && rangeList[i].within === "root"){ 
                 parentest = rangeList[i];
+                delete parentest["_id"];
                 break; //There can only be one range considered the ultimate aggregator.
             }
         }
@@ -3087,12 +3089,14 @@ function orderSeqFromStruct(){
         for(var i=0; i<rangeList.length; i++){
             if(rangeList[i]["@id"] === uri){
                 pull_this_out = rangeList[i];
+                delete pull_this_out["_id"];
                 break;
             }
         }
         return pull_this_out;
     }
-
+    
+    /* Very long URLs like the ones Karen used that do not get saved as an HTTP URL, but a dataurl, cause call stack overflows. */
     function unflatten(flatRanges, parent) {
       var children_uris = [];
       var children = [];
