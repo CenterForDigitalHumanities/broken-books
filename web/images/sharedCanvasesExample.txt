@@ -909,7 +909,7 @@ var rangeCollection = [
 function getAllRanges(){
   //THERE WILL AT LEAST BE ONE RANGE
   var properties={"@type" : "sc:Range"};
-  var url="http://localhost:8080/brokenBooks/getAnnotationByPropertiesServlet";
+  var url="http://localhost:8181/brokenBooks/getAnnotationByPropertiesServlet";
   var params = {"content" : JSON.stringify(properties)};
   console.log("GET RANGES LIVE");
   $.post(url, params, function(data){
@@ -922,7 +922,7 @@ function getAllRanges(){
 function getAllAnnotations(){
   //THERE MAY BE NO ANNOTATIONS
   var properties={"@type" : "sc:AnnotationList"};
-  var url="http://localhost:8080/brokenBooks/getAnnotationByPropertiesServlet"
+  var url="http://localhost:8181/brokenBooks/getAnnotationByPropertiesServlet"
   var params = {"content" : JSON.stringify(properties)};
   $.post(url, params, function(data){
      annotationLists = JSON.parse(data);
@@ -934,7 +934,7 @@ function getAllAnnotations(){
 function getAllCanvases(){
   //THERE WILL AT LEAST BE 2 CANVASES
   var properties={"@type" : "sc:Canvas"};
-  var url="http://localhost:8080/brokenBooks/getAnnotationByPropertiesServlet"
+  var url="http://localhost:8181/brokenBooks/getAnnotationByPropertiesServlet"
   var params = {"content" : JSON.stringify(properties)};
   $.post(url, params, function(data){
      pageCanvases = JSON.parse(data);
